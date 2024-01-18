@@ -4,13 +4,9 @@ title: "My Quarto Slides"
 output:
   quarto_presentation:
     incremental: true
-    
 ---
 
-
-
 # Preface {.unnumbered}
-
 
 This is a Quarto book.
 
