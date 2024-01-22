@@ -1,4 +1,4 @@
-# Week01 Introduction to remote sensing
+# Week01 Introduction to remote sensing {.unnumbered}
 
 ## Theoretical Part
 
