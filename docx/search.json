@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "LearningDiary",
+    "section": "",
+    "text": "Preface\nThis is a Learning Diary of CASA0023 Remote Sensing."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "LearningDiary",
+    "section": "About me",
+    "text": "About me\n\n\n\nyy’s portrait\n\n\nKKKKKenny,"
+  },
+  {
+    "objectID": "index.html#about-layout-of-learning-diary",
+    "href": "index.html#about-layout-of-learning-diary",
+    "title": "LearningDiary",
+    "section": "About Layout of Learning Diary",
+    "text": "About Layout of Learning Diary\nYou can also click bar in the left to navigate to corresponding page\n\nWeek 01 (put a link here)\nWeek 02\nWeek 03"
+  },
+  {
+    "objectID": "Week01.html",
+    "href": "Week01.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "Week02.html",
+    "href": "Week02.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n\n[1] 2"
+  },
+  {
+    "objectID": "Week03.html",
+    "href": "Week03.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]
