@@ -1,4 +1,9 @@
 # Week 02 Portfolio {.unnumbered}
 
-<iframe src="Xaringan_Sample.html" width="100%" height="600px"></iframe>
+```{r echo = FALSE, out.width='40%'}
+xaringanExtra::embed_xaringan(
+  url = "https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/#6",
+  ratio = "16:9")
+
+```
 
