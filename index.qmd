@@ -13,6 +13,9 @@ KKKKKenny,
 ## About Layout of Learning Diary
 
 You can also click bar in the left to navigate to corresponding page
+
 - Week 01 (put a link here)
+
 - Week 02
+
 - Week 03
