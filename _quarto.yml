@@ -1,7 +1,8 @@
+output-dir: docx
+
 project:
   type: book
-  
-output-dir: docx
+
 
 book:
   title: "LearningDiary"
