@@ -7,3 +7,6 @@ xaringanExtra::embed_xaringan(
 
 ```
 
+[Link]: https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/
+
+If that preview doesn’t work, please click [Link] to find out more.
