@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docx
 
 book:
   title: "LearningDiary"
@@ -16,12 +17,8 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    output-dir: docx
   pdf:
     documentclass: scrreprt
-    output-dir: pdf
-
-output-dir: docx
 
 editor: visual
 
