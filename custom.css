@@ -1,0 +1,42 @@
+/* Extra CSS */
+.small {
+  font-size: 70%;
+  line-height: 100%;
+
+}
+.full-width {
+  display: flex;
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.normal-font {
+  font-size: 80%; /* 调整字体大小为正常大小的80% */
+}
+
+.bigger-font {
+  font-size: 120%; /* 调整字体大小为正常大小的120% */
+}
+
+body {
+  font-family: 'Bradley Hand', cursive !important;
+}
+
+/* 设置标题字体 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.pull-left h1 {
+  font-size: 200%; /* 根据需要调整标题的字体大小 */
+}
+
+.pull-left h2 {
+  font-size: 150%; /* 根据需要调整二级标题的字体大小 */
+}
+
+.pull-left p {
+  font-size: 80%; /* 根据需要调整段落文本的字体大小 */
+}
+
+

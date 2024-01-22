@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: docx
+  output-dir: docs
 
 book:
   title: "LearningDiary"

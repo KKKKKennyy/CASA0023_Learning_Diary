@@ -1,9 +1,15 @@
-# Introduction
+# Week01 Introduction to remote sensing
 
-This is a book created from markdown and executable code.
+## Theoretical Part
 
-See @knuth84 for additional discussion of literate programming.
+### 
 
-```{r}
-1 + 1
-```
+![Image of LandSat8](img/LandSat8.jpg)
+
+## Practical Part
+
+(Waiting for updating)
+
+## What I learned from mistakes.
+
+(Waiting for updating)
