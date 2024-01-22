@@ -1,12 +1,12 @@
 # Week 02 Portfolio {.unnumbered}
 
+[Link]: https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/
+
+If that preview doesn’t work, please click [Link] to find out more.
+
 ```{r echo = FALSE, out.width='40%'}
 xaringanExtra::embed_xaringan(
   url = "https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/#6",
   ratio = "16:9")
 
 ```
-
-[Link]: https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/
-
-If that preview doesn’t work, please click [Link] to find out more.

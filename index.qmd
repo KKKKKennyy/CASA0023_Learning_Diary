@@ -14,7 +14,7 @@ KKKKKenny,
 
 You can also click bar in the left to navigate to corresponding page
 
-- Week 01 (put a link here)
+- Week 01
 
 - Week 02
 
