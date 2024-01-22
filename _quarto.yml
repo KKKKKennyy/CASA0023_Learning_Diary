@@ -1,5 +1,4 @@
-output-dir: docx
-
+---
 project:
   type: book
 
@@ -22,5 +21,8 @@ format:
   pdf:
     documentclass: scrreprt
 
+output-dir: docx
+
 editor: visual
 
+---
