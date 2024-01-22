@@ -1,17 +1,18 @@
----
-title: "My Quarto Slides"
 
-output:
-  quarto_presentation:
-    incremental: true
----
 
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This is a Learning Diary of CASA0023 Remote Sensing.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## About me
 
-```{r}
-1 + 1
-```
+![yy's portrait](/img/IMG_5276.JPG)
+
+KKKKKenny, 
+
+## About Layout of Learning Diary
+
+You can also click bar in the left to navigate to corresponding page
+- Week 01 (put a link here)
+- Week 02
+- Week 03
