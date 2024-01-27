@@ -106,10 +106,12 @@ Source: [NIREOS](https://www.nireos.com/hyperspectral-imaging/)
 ![Satellites with different pixel resolution and update frequency](img/Temporal.png)
 Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)
 
-## Practical Part
-
-(Waiting for updating)
-
 ## Reflection
 
-(Waiting for updating)
+The first week was a relatively basic introductory class, so overall it wasn't too difficult to get a basic knowledge of an unfamiliar field.
+
+Although I had forgotten a bit about the physics when it came to wavelengths and frequencies, it was good to see that only some concepts were covered. The subsequent understanding and working principle are not affected.
+
+In addition, the storage and processing of remote sensing data (**_raster_**) in class was also very confusing. But the good thing is that the Drop-in session immediately following was able to talk about and solve this problem. Each pixel point has a unique spectral map (if it's a multi-band image), usually synthesised from Red, Green, and Blue. But it is also possible to choose different wavelengths for the synthesis, depending on the needs of the study. 
+
+I'm thankful to ArcGIS, ESRI, and NASA for really providing a lot of valid information in their offical documents to help me make sense of it. For example, [this link](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/raster-bands.htm) is a detailed description of the Raster data. Also thanks to ChatGPT for being able to give me some basic Q&A's.
