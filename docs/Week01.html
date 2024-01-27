@@ -133,12 +133,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#theoretical-part" id="toc-theoretical-part" class="nav-link active" data-scroll-target="#theoretical-part">Theoretical Part</a>
+  <li><a href="#theoretical-part" id="toc-theoretical-part" class="nav-link active" data-scroll-target="#theoretical-part">1. Theoretical Part</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#different-sensors" id="toc-different-sensors" class="nav-link" data-scroll-target="#different-sensors">1.1. Different Sensors</a></li>
+  <li><a href="#different-orbits" id="toc-different-orbits" class="nav-link" data-scroll-target="#different-orbits">1.2. Different Orbits</a></li>
+  <li><a href="#different-interactions" id="toc-different-interactions" class="nav-link" data-scroll-target="#different-interactions">1.3. Different Interactions</a></li>
+  <li><a href="#data-format" id="toc-data-format" class="nav-link" data-scroll-target="#data-format">1.4. Data Format</a></li>
   </ul></li>
   <li><a href="#practical-part" id="toc-practical-part" class="nav-link" data-scroll-target="#practical-part">Practical Part</a></li>
-  <li><a href="#what-i-learned-from-mistakes." id="toc-what-i-learned-from-mistakes." class="nav-link" data-scroll-target="#what-i-learned-from-mistakes.">What I learned from mistakes.</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -163,23 +166,163 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <section id="theoretical-part" class="level2">
-<h2 class="anchored" data-anchor-id="theoretical-part">Theoretical Part</h2>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
+<h2 class="anchored" data-anchor-id="theoretical-part">1. Theoretical Part</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/LandSat8.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Image of LandSat8</figcaption>
+<p><img src="img/Week1Mindmap.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mindmap for W1 lecture part</figcaption>
 </figure>
 </div>
+<section id="different-sensors" class="level3">
+<h3 class="anchored" data-anchor-id="different-sensors">1.1. Different Sensors</h3>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Energy</th>
+<th style="text-align: center;">Receive</th>
+<th style="text-align: center;">E.g.,</th>
+<th style="text-align: center;">Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Passive</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">Reflected energy from sun (electromagnetic)</td>
+<td style="text-align: center;">Human eye, Satellite sensor</td>
+<td style="text-align: center;">Remote Sensing, meteorological observation, astronomy</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Active</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Electromagnetic that actively emit</td>
+<td style="text-align: center;">Radar, X-ray, LiDAR</td>
+<td style="text-align: center;">ranging, velocity measurement, terrain mapping, and target identification</td>
+</tr>
+</tbody>
+</table>
+<p><img src="img/DifferentSensors.png" class="img-fluid" alt="Different Sensors"> Source: <a href="https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing#resolution">NASA</a></p>
+<p>Passive sensors are more widely used in remote sensing of the Earth and environmental monitoring because they can provide multi-band information on a global scale.</p>
+<ul>
+<li><p>These sensors do not need to actively send signals to the target, but rely on natural radiation, thus enabling energy-efficient, wide-area observations. For this reason, passive sensors are often mounted on satellites to enable remote sensing observations on a global scale.</p></li>
+<li><p>In addition, passive sensors typically cover multiple wavelength bands, including visible, infrared, and ultraviolet. This broad-spectrum coverage allows them to capture a wide range of features and information about the Earth’s surface, from vegetation cover to surface temperature, in different wavelength bands.</p></li>
+</ul>
+</section>
+<section id="different-orbits" class="level3">
+<h3 class="anchored" data-anchor-id="different-orbits">1.2. Different Orbits</h3>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Definition</th>
+<th style="text-align: center;">E.g.,</th>
+<th style="text-align: center;">Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Geosynchronous Orbit (GSO)</td>
+<td style="text-align: center;">Satellite’s period matches the Earth’s rotation period, making the satellite’s position relatively fixed above the Earth</td>
+<td style="text-align: center;">The GOES series (Geostationary Operational Environmental Satellites) by the United States and the Meteosat series by Europe</td>
+<td style="text-align: center;">Weather Forecasting, Climate Monitoring, and communications</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Geostationary Orbit (GEO)</td>
+<td style="text-align: center;">Satellite’s speed matches the Earth’s rotation, allowing it to remain stationary relative to a point on the Earth’s surface.</td>
+<td style="text-align: center;">The International Telecommunications Satellite Organization, SES (Société Européenne des Satellites)</td>
+<td style="text-align: center;">Communication, Observing Earth’s weather, environment, and climate changes, providing valuable remote sensing data</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="different-interactions" class="level3">
+<h3 class="anchored" data-anchor-id="different-interactions">1.3. Different Interactions</h3>
+<section id="earths-surface" class="level4">
+<h4 class="anchored" data-anchor-id="earths-surface">1.3.1. Earth’s Surface</h4>
+<ul>
+<li>Energy will be obsorbed by the surface</li>
+<li>Energy being transmitted through the surface</li>
+</ul>
+<p><img src="img/InteractionWithSurface.png" class="img-fluid" alt="Interaction with Earth’s Surface"> Source:<a href="https://www.researchgate.net/publication/350978231_Remote_Sensing_and_Image_Analysis_in_Environmental_Studies/figures?lo=1">Ghimire, 2021</a></p>
+<ul>
+<li><p>Bidirectional Reflectance Distribution Function (BRDF):</p></li>
+<li><p>Definition: A two-dimensional function used to represent the intensity distribution of light entering a material or surface and then exiting the light at the other end.</p></li>
+<li><p>Application: Simulates real-life light conditions, detects particle concentrations in the atmosphere, and detects air humidity in the soil.</p></li>
+<li><p>Reactions that occur when interacting with the Earth’s surface：</p></li>
+<li><p>Polarization: When electromagnetic waves are affected by interference, scattering or reflection, <strong>the direction of vibration changes</strong>. It is often used to distinguish between different material properties because different types of materials have different polarization responses.</p></li>
+<li><p>Fluorescence: A substance is excited to emit light that has a longer wavelength. It can usually be used to <strong>detect certain specific compounds</strong> or <strong>biological processes</strong>, and is therefore used in fields such as environmental pollution detection and soil characterisation.</p></li>
+</ul>
+</section>
+<section id="atmosphere" class="level4">
+<h4 class="anchored" data-anchor-id="atmosphere">1.3.2. Atmosphere</h4>
+<p>Atmospheric scattering</p>
+<p><img src="img/InteractionWithAtmosphere.png" class="img-fluid" alt="Interaction with Atmosphere"> Source:<a href="https://wordpress71133.wordpress.com/the-light-energy-source-in-remote-sensing/">Bovensmann et al., 2011</a></p>
+<p>Q: Why is the sky blue (provided that air particles)</p>
+<p>A: Because when the sun is overhead, the shorter wavelength of blue light (as shown in the figure below) is more easily scattered, and thus the sky is observed to be blue. Whereas at sunset, the blue light is scattered away by the atmosphere and the orange-red light passes through the atmosphere into the eye, hence the sky is orange-red.</p>
+<p><img src="img/WavelengthOfColors.png" class="img-fluid" alt="Wavelength of Different colours"> Source: <a href="https://www.sciencelearn.org.nz/resources/47-colours-of-light">The University of Waikato Te Whare Wānanga o Waikato</a></p>
+<p>Similarly, seawater has the ability to absorb and scatter. What we usually observe is blue light scattered by seawater.</p>
+<p>In addition, black colour indicates that all light is absorbed and there is no reflection, scattering or projection. Therefore, the sea floor is black without light.</p>
+<p>White, on the other hand, is the result of all colours being absorbed in <strong>equal amounts</strong> and is the result of mixing various colours together.</p>
+</section>
+</section>
+<section id="data-format" class="level3">
+<h3 class="anchored" data-anchor-id="data-format">1.4. Data Format</h3>
+<p>Majority of remotely sensed data is <strong><em>Raster</em></strong> which is <a href="https://www.adobe.com/creativecloud/file-types/image/comparison/raster-vs-vector.html">built from pixel</a>. I think this link analysing the difference between a Raster and a Vector is still quite well written and explains what a Raster is quite clearly. In addition, <a href="https://pro.arcgis.com/en/pro-app/3.1/help/data/imagery/introduction-to-raster-data.htm">this link</a> also explain raster very well. They also have other information like “Raster bands”, “Image and raster data organization” and so on.</p>
+<ul>
+<li><p>Several File Types: BIL, BSQ, BIP, GeoTIFF(Most seen). <a href="https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.htm">This Link</a> provides a detailed introduction to those kind of files with examples.</p></li>
+<li><p>Resolution:</p></li>
+</ul>
+<ol type="1">
+<li>Radiometric: The amount of information in each pixel.</li>
+</ol>
+<ul>
+<li><p>8-bit can hold 0-255 possibilities, 11-bit can hold 0-2047 possibilities. Here it is perhaps more superficially understood that subtle colour differences can or cannot be represented.</p></li>
+<li><p>In addition, different numbers of spectral channels correspond to different spectral ranges measured on different bands. Multiple spectral channels allow the capture of information in different bands of the surface, such as visible light, infrared, etc. For example, AVIRIS has 224 spectral channels.</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Spatial: The size of the actual area represented by each pixel point.</li>
+</ol>
+<ul>
+<li>The higher the resolution, the finer the surface features captured.</li>
+</ul>
+<p><img src="img/SpatialResolution.png" class="img-fluid" alt="The difference in pixel resolution"> Source: <a href="https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing#resolution">NASA</a></p>
+<ol start="3" type="1">
+<li>Spectral：Ability to distinguish spectral detail over different bands.</li>
+</ol>
+<ul>
+<li><p>Higher spectral resolution indicates that the data has more information in more bands and is able to distinguish between more landmark features and material composition.</p></li>
+<li><p>In data, each band is stored in a dedicated grating layer. Spectral data can be discrete or continuous.</p></li>
+</ul>
+<p><img src="img/SpectralResoluton.png" class="img-fluid" alt="Sprctral data storage"> Source: <a href="https://www.nireos.com/hyperspectral-imaging/">NIREOS</a></p>
+<ol start="4" type="1">
+<li>Temporal: Time interval for acquiring data.</li>
+</ol>
+<ul>
+<li>The following figure shows the distribution of time intervals versus pixel resolution for different satellites.</li>
+</ul>
+<p><img src="img/Temporal.png" class="img-fluid" alt="Satellites with different pixel resolution and update frequency"> Source: <a href="https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/">ESRI</a></p>
 </section>
 </section>
 <section id="practical-part" class="level2">
 <h2 class="anchored" data-anchor-id="practical-part">Practical Part</h2>
 <p>(Waiting for updating)</p>
 </section>
-<section id="what-i-learned-from-mistakes." class="level2">
-<h2 class="anchored" data-anchor-id="what-i-learned-from-mistakes.">What I learned from mistakes.</h2>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
 <p>(Waiting for updating)</p>
 
 
