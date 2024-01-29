@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -130,7 +164,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#xaringan" id="toc-xaringan" class="nav-link active" data-scroll-target="#xaringan">1. Xaringan</a>
+  <ul class="collapse">
+  <li><a href="#xaringan-sample" id="toc-xaringan-sample" class="nav-link" data-scroll-target="#xaringan-sample">1.1. Xaringan Sample</a></li>
+  <li><a href="#bugs-ive-encountered-in-using-xaringan-for-slides-fyi" id="toc-bugs-ive-encountered-in-using-xaringan-for-slides-fyi" class="nav-link" data-scroll-target="#bugs-ive-encountered-in-using-xaringan-for-slides-fyi">1.2. Bugs I’ve encountered in using Xaringan for Slides (FYI)</a></li>
+  <li><a href="#useful-materials" id="toc-useful-materials" class="nav-link" data-scroll-target="#useful-materials">1.3. Useful Materials</a></li>
+  </ul></li>
+  <li><a href="#quarto-mark-down" id="toc-quarto-mark-down" class="nav-link" data-scroll-target="#quarto-mark-down">2. Quarto Mark Down</a>
+  <ul class="collapse">
+  <li><a href="#embedded-xaringan-in-qmd" id="toc-embedded-xaringan-in-qmd" class="nav-link" data-scroll-target="#embedded-xaringan-in-qmd">2.1. Embedded Xaringan in QMD</a></li>
+  <li><a href="#bugs-ive-encountered-in-using-qmd-fyi" id="toc-bugs-ive-encountered-in-using-qmd-fyi" class="nav-link" data-scroll-target="#bugs-ive-encountered-in-using-qmd-fyi">2.2. Bugs I’ve encountered in using QMD (FYI)</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">3. Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -152,6 +203,46 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="xaringan" class="level2">
+<h2 class="anchored" data-anchor-id="xaringan">1. Xaringan</h2>
+<section id="xaringan-sample" class="level3">
+<h3 class="anchored" data-anchor-id="xaringan-sample">1.1. Xaringan Sample</h3>
+<p>Xaringan is a new tool for me, it’s a package in R. It can knit rmd into a html for presentation, at first I thought it’s a hard thing to do, but actually with the help of css it can have a lot of functions and styles.And it is very clear to use ‘—’ to separate different pages.</p>
+<p><a href="https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/">Xaringan Sample</a></p>
+</section>
+<section id="bugs-ive-encountered-in-using-xaringan-for-slides-fyi" class="level3">
+<h3 class="anchored" data-anchor-id="bugs-ive-encountered-in-using-xaringan-for-slides-fyi">1.2. Bugs I’ve encountered in using Xaringan for Slides (FYI)</h3>
+<ul>
+<li><p>Both Xaringan and XaringanExtra require remote installation, and the instructions need to be executed on <strong>Console</strong> instead of Terminal</p></li>
+<li><p>When the template file is created, the DT package from CARN should also be installed</p></li>
+<li><p>Unlike yml documents, ‘—’ does not need to appear in pairs in Xaringan</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">option</span>(<span class="at">htmltools.dir.version =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Avoid the unconcise directory structure that comes with versioning</p></li>
+<li><p>In the header of the Rmd file, several CSS files, which will be invoked in sequence in Knitting, can be declared at the same time</p></li>
+<li><p>If you want the <strong>entire slides font</strong> to be adjusted, you should declare this in your CSS file. The font declared in the header can only affect the font of the current page</p></li>
+<li><p>Setting <strong>eval = FALSE</strong> at the beginning of a code block allows the code not to run, but to be displayed on the web page. Setting <strong>echo = FALSE</strong> can display only the result of running the code without showing the code</p></li>
+</ul>
+</section>
+<section id="useful-materials" class="level3">
+<h3 class="anchored" data-anchor-id="useful-materials">1.3. Useful Materials</h3>
+<ul>
+<li><p><a href="https://pkg.garrickadenbuie.com/xaringanthemer/">Xaringan Template in RStudio</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/xaringanthemer/vignettes/xaringanthemer.html">Fonts, Colors, Theme Settings</a></p></li>
+</ul>
+</section>
+</section>
+<section id="quarto-mark-down" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-mark-down">2. Quarto Mark Down</h2>
+<p><a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto Markdown</a> is an upgraded version of R markdown. qmd document can be rendered into html or pdf or other formats.</p>
+<p>Compared to HTML, qmd is much simpler and doesn’t require pairs of ‘&lt;&gt;’ to declare styles, just a few symbols (like *, _, #) to create some styles.</p>
+<p>In addition, images can be inserted by providing a file path or link, and by default they fill the screen without worrying about placement.</p>
+<section id="embedded-xaringan-in-qmd" class="level3">
+<h3 class="anchored" data-anchor-id="embedded-xaringan-in-qmd">2.1. Embedded Xaringan in QMD</h3>
+<p>If that preview doesn’t work, please click <a href="https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/">Link</a> to find out more.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
@@ -160,9 +251,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>If that preview doesn’t work, please click <a href="https://kkkkkennyy.github.io/CASA0023_Xaringan_Sample/">Link</a> to find out more.</p>
+</section>
+<section id="bugs-ive-encountered-in-using-qmd-fyi" class="level3">
+<h3 class="anchored" data-anchor-id="bugs-ive-encountered-in-using-qmd-fyi">2.2. Bugs I’ve encountered in using QMD (FYI)</h3>
+<ul>
+<li><p>You should first declare “<strong>output-dir: docs</strong>” in the yml file, which is consistent with the default setting in GitHub pages deployment. Remember not to type docs as docx, or you will get an error in the GitHub Action section.</p></li>
+<li><p>All changes in Rstudio <strong>must render before committing and pushing</strong>. The core is to upload render out the html file, which can help GitHub better build and deploy web pages</p></li>
+<li><p>When embedding Xaringan into html. Xaringan slides needs to be published first, and in the process, Rmd should preferably be saved as <strong>index.rmd</strong>. In this way, there will be no bug that <em>can’t find index during build and deployment</em>. Although it was mentioned in class that it is best not to change index.qmd for qmd book, <strong>Xaringan has the same requirement</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">3. Reflection</h2>
+<p>Just like learning Python, the hardest part is configuring the environment. Even though I’ve touched markdown in CASA0013 last term, how to change qmd from local to online in <strong>GitHub’s pages</strong> is a brand new challenge. As I shared in the Bugs section (1.2. and 2.2.), <strong><em>there were always different issues at the very beginning</em></strong>. index is so important; docs must be named correctly as the default folder; I have to render before updating the QMD and docs folder; and I have to wait for the page to be updated in the GitHub deploy.</p>
+<p>There were always different challenges, but thankfully the information on <strong>Slack</strong> was great in helping me embed Xaringan into qmd without any problems, and <strong>Google</strong> is a great search engine for linking to various official docs or blogs. In addition, using <strong>ChatGPT</strong> wisely can be a huge boost to efficiency. Although the content it provides may not be accurate, and we need to double-check. However, a general framework and concepts help me to know and understand to a certain extent.</p>
+<p>I am more proficient in the process than I was before using markdown. And this time, I learnt about <strong>yml</strong>’s declaration of the overall site configuration and the relationship between qmd files. After constant debugging and redeployment, <strong><em>I began to feel that I had mastered the basics of using this tool</em></strong> and was able to layout and update content with relative proficiency.</p>
+<p>Not only do these tools help me with coursework and the learning dairy, but I think I can still use the tools in the future when I want to document something and keep it up to date. Not only are they valuable now, but they will help in the future.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

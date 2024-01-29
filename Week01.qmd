@@ -106,7 +106,7 @@ Source: [NIREOS](https://www.nireos.com/hyperspectral-imaging/)
 ![Satellites with different pixel resolution and update frequency](img/Temporal.png)
 Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)
 
-## Reflection
+## 2. Reflection
 
 The first week was a relatively basic introductory class, so overall it wasn't too difficult to get a basic knowledge of an unfamiliar field.
 
