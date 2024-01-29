@@ -62,6 +62,10 @@ xaringanExtra::embed_xaringan(
 
 - When embedding Xaringan into html. Xaringan slides needs to be published first, and in the process, Rmd should preferably be saved as **index.rmd**. In this way, there will be no bug that *can't find index during build and deployment*. Although it was mentioned in class that it is best not to change index.qmd for qmd book, **Xaringan has the same requirement**
 
+- After the push, you **need to wait for the build and deployment to be completed** before the page is updated. Don't check a web page and think something's wrong because it hasn't been updated. GitHub needs to be given a little time to build and deploy the page
+
+![GitHub pages build and deployment](img/BuildandDeployment.png)
+
 ## 3. Reflection
 
 Just like learning Python, the hardest part is configuring the environment. Even though I've touched markdown in CASA0013 last term, how to change qmd from local to online in **GitHub's pages** is a brand new challenge. As I shared in the Bugs section (1.2. and 2.2.), **_there were always different issues at the very beginning_**. index is so important; docs must be named correctly as the default folder; I have to render before updating the QMD and docs folder; and I have to wait for the page to be updated in the GitHub deploy.

@@ -258,7 +258,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>You should first declare “<strong>output-dir: docs</strong>” in the yml file, which is consistent with the default setting in GitHub pages deployment. Remember not to type docs as docx, or you will get an error in the GitHub Action section.</p></li>
 <li><p>All changes in Rstudio <strong>must render before committing and pushing</strong>. The core is to upload render out the html file, which can help GitHub better build and deploy web pages</p></li>
 <li><p>When embedding Xaringan into html. Xaringan slides needs to be published first, and in the process, Rmd should preferably be saved as <strong>index.rmd</strong>. In this way, there will be no bug that <em>can’t find index during build and deployment</em>. Although it was mentioned in class that it is best not to change index.qmd for qmd book, <strong>Xaringan has the same requirement</strong></p></li>
+<li><p>After the push, you <strong>need to wait for the build and deployment to be completed</strong> before the page is updated. Don’t check a web page and think something’s wrong because it hasn’t been updated. GitHub needs to be given a little time to build and deploy the page</p></li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/BuildandDeployment.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">GitHub pages build and deployment</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="reflection" class="level2">
