@@ -1,4 +1,30 @@
 # Week03 {.unnumbered}
 
-::: {#refs}
-:::
+## 1. Summary
+
+![Mindmap of W3 summary](img/Week3Mindmap.png)
+
+### 1.1 Corrections
+
+### 1.1.1. Geometric 
+
+#### Definition
+
+When remote sensing data are collected, *the sensor is not pointing directly down to the ground*; *elevation changes due to the undulations of the terrain*; *changes in the trajectory of the vehicle due to winds*; *and the relative motion of the satellite with respect to the earth* can all lead to image distortion. Correction for such images is **geometric correction**.
+
+#### Solution
+
+![Workflow of Geometric correction](img/GeometricSolution.png)
+* In accurate matching of remote sensing images, more complex nonlinear transformation models may be chosen
+
+* Much like the GIS application of overlaying old maps into modern GIS. Geo-matching process to ensure accuracy and spatial consistency of maps
+
+### 1.1.2. Atmosphere
+
+
+
+
+
+
+
+

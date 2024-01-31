@@ -1,8 +1,8 @@
 # Week01 Introduction to remote sensing {.unnumbered}
 
-## 1. Theoretical Part
+## 1. Summary
 
-![Mindmap for W1 lecture part](img/Week1Mindmap.png)
+![Mindmap of W1 summary](img/Week1Mindmap.png)
 
 ### 1.1. Different Sensors
 
@@ -106,7 +106,11 @@ Source: [NIREOS](https://www.nireos.com/hyperspectral-imaging/)
 ![Satellites with different pixel resolution and update frequency](img/Temporal.png)
 Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)
 
-## 2. Reflection
+## 2. Application
+
+To be update
+
+## 3. Reflection
 
 The first week was a relatively basic introductory class, so overall it wasn't too difficult to get a basic knowledge of an unfamiliar field.
 
