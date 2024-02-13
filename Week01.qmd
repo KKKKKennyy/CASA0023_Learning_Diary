@@ -1,4 +1,4 @@
-# Week01 Introduction to remote sensing {.unnumbered}
+# Week 01 Introduction to remote sensing {.unnumbered}
 
 ## 1. Summary
 
