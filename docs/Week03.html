@@ -134,9 +134,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">1. Summary</a>
   <ul class="collapse">
-  <li><a href="#corrections" id="toc-corrections" class="nav-link" data-scroll-target="#corrections">1.1 Corrections</a></li>
-  <li><a href="#geometric" id="toc-geometric" class="nav-link" data-scroll-target="#geometric">1.1.1. Geometric</a></li>
-  <li><a href="#atmosphere" id="toc-atmosphere" class="nav-link" data-scroll-target="#atmosphere">1.1.2. Atmosphere</a></li>
+  <li><a href="#corrections" id="toc-corrections" class="nav-link" data-scroll-target="#corrections">1.1. Corrections</a></li>
+  <li><a href="#image-joining" id="toc-image-joining" class="nav-link" data-scroll-target="#image-joining">1.2. Image Joining</a></li>
+  <li><a href="#image-enhancement" id="toc-image-enhancement" class="nav-link" data-scroll-target="#image-enhancement">1.3. Image Enhancement</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -166,28 +166,118 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/Week3Mindmap.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Mindmap of W3 summary</figcaption>
+<figcaption class="figure-caption">Mindmap of W3 Summary</figcaption>
 </figure>
 </div>
 <section id="corrections" class="level3">
-<h3 class="anchored" data-anchor-id="corrections">1.1 Corrections</h3>
+<h3 class="anchored" data-anchor-id="corrections">1.1. Corrections</h3>
+<section id="geometric" class="level4">
+<h4 class="anchored" data-anchor-id="geometric">1.1.1. Geometric</h4>
+<section id="definition" class="level5">
+<h5 class="anchored" data-anchor-id="definition">Definition</h5>
+<p>When remote sensing data are collected, <em>the sensor is not pointing directly down to the ground</em>; <em>elevation changes due to the undulations of the terrain</em>; <em>changes in the trajectory of the vehicle due to winds</em>; <em>and the relative motion of the satellite with respect to the earth</em> can all lead to image distortion. Correction for such images is <strong>geometric correction</strong></p>
 </section>
-<section id="geometric" class="level3">
-<h3 class="anchored" data-anchor-id="geometric">1.1.1. Geometric</h3>
-<section id="definition" class="level4">
-<h4 class="anchored" data-anchor-id="definition">Definition</h4>
-<p>When remote sensing data are collected, <em>the sensor is not pointing directly down to the ground</em>; <em>elevation changes due to the undulations of the terrain</em>; <em>changes in the trajectory of the vehicle due to winds</em>; <em>and the relative motion of the satellite with respect to the earth</em> can all lead to image distortion. Correction for such images is <strong>geometric correction</strong>.</p>
-</section>
-<section id="solution" class="level4">
-<h4 class="anchored" data-anchor-id="solution">Solution</h4>
-<p><img src="img/GeometricSolution.png" class="img-fluid" alt="Workflow of Geometric correction"> * In accurate matching of remote sensing images, more complex nonlinear transformation models may be chosen</p>
+<section id="solution" class="level5">
+<h5 class="anchored" data-anchor-id="solution">Solution</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/GeometricSolution.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Workflow of Geometric Correction</figcaption>
+</figure>
+</div>
 <ul>
-<li>Much like the GIS application of overlaying old maps into modern GIS. Geo-matching process to ensure accuracy and spatial consistency of maps</li>
+<li><p>In accurate matching of remote sensing images, more complex nonlinear transformation models may be chosen</p></li>
+<li><p>Much like the GIS application of overlaying old maps into modern GIS. Geo-matching process to ensure accuracy and spatial consistency of maps</p></li>
 </ul>
 </section>
 </section>
-<section id="atmosphere" class="level3">
-<h3 class="anchored" data-anchor-id="atmosphere">1.1.2. Atmosphere</h3>
+<section id="atmospheric" class="level4">
+<h4 class="anchored" data-anchor-id="atmospheric">1.1.2. Atmospheric</h4>
+<section id="definition-1" class="level5">
+<h5 class="anchored" data-anchor-id="definition-1">Definition</h5>
+<p><em>Atmospheric scattering and topographic attenuation</em> both cause environmental attenuation; in addition, <em>particles and gases in the atmosphere absorb and scatter</em> light, which can create haze that reduces contrast and sharpness in an image. Radiation produces an <em>“adjacency effect”</em> that causes pixels in an image to be affected by surrounding pixels, which affects sharpness. The correction for this type of image is <strong>Atmospheric correction</strong></p>
+<p><strong><em>Regarding the question on page P26 unnecessary</em></strong>: <em>Why is atmospheric correction not necessary for all such images</em>?</p>
+<p><strong><em>Answer</em></strong>: Actually it depends largely on the <strong>data</strong> and the <strong>purpose</strong>. If it is <em>just some simple classification task</em>, and highly accurate spectral information is not needed, then there is no need to do Atmospheric correction. Or there is <em>no way to do atmospheric correction when time and resources are limited</em>. Or maybe some <em>data have already been atmospherically corrected,</em> for example, both <strong>USGS Landsat</strong> and <strong>ESA Sentinel</strong> mention on their official websites that they use atmospheric correction to process the data</p>
+</section>
+<section id="solution-1" class="level5">
+<h5 class="anchored" data-anchor-id="solution-1">Solution</h5>
+<p>There are 6 methods of atmospheric correction provided in the lecture, and the compiled notes are as follows. My preference is the fifth one because most of the functions or functions can be implemented directly by calling them. With the development of python, the Py6S library makes it easier to use atmospheric radiative transfer models including MODTRAN 4+ and Second Simulation of the Satellite Signal in the Solar Spectrum. The sixth is the most interesting to me, and appears to allow measurements to be made with a handheld device, and then linear relationships to be established to correct the remotely sensed data</p>
+<p>It is worth noting, however, that when comparing data before and after calibration, it is necessary to <strong>ensure that the scales are consistent</strong> (e.g., P29)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/AtmosphericSolution.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Atmospheric Solution Types</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="topographic-orthorectification" class="level4">
+<h4 class="anchored" data-anchor-id="topographic-orthorectification">1.1.3. Topographic (Orthorectification)</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/OrthorectificationOverview.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Orthorectification / Topographic Correction Overview</figcaption>
+</figure>
+</div>
+<section id="definition-2" class="level5">
+<h5 class="anchored" data-anchor-id="definition-2">Definition</h5>
+<p>Orthorectification correction is a subset of geometric correction, where the image is distorted because <em>the sensor is not pointing directly below the ground</em>. The correction to remove the distortion in the image is <strong>Orthorectification correction</strong></p>
+</section>
+<section id="solution-2" class="level5">
+<h5 class="anchored" data-anchor-id="solution-2">Solution</h5>
+<p><strong>Sensor geometry information</strong> including sensor position, attitude and viewing angle is required to determine the actual position of the pixel on the ground. The terrain variations are then taken into account in conjunction with the <strong>Digital Elevation Model (DEM)</strong> to correct image distortions</p>
+<p>In searching for the Digital Elevation Model, I found that Orthorectification correction is only one direction of its application. At its core, it still contains <strong>information on topographic relief, slope and aspect</strong>, which can be used not only for remote sensing data correction, but also for modelling water flow paths, flood risk areas and hydrological processes. Its applications are covered in the next “2. Application” section</p>
+</section>
+</section>
+<section id="radiometric" class="level4">
+<h4 class="anchored" data-anchor-id="radiometric">1.1.4. Radiometric</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/RadiometricOverview.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Radiometric Correction Overview</figcaption>
+</figure>
+</div>
+<section id="definition-3" class="level5">
+<h5 class="anchored" data-anchor-id="definition-3">Definition</h5>
+<p><em>The radiance of image data can be inconsistent across time, location, and sensor</em>, <strong>Radiometric Calibration</strong> calibrates the response of a sensor by converting the digital number count (DN) of an image into a physically meaningful radiance or emissivity value</p>
+</section>
+<section id="solution-3" class="level5">
+<h5 class="anchored" data-anchor-id="solution-3">Solution</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/RadiometricSolution.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Workflow of Radiometric Correction</figcaption>
+</figure>
+</div>
+<ul>
+<li><p><strong>Bias</strong> is a constant that represents the zero offset of the sensor. It is used to adjust the output of the sensor to ensure that the zero drift of the sensor is taken into account in the radiance calculation</p></li>
+<li><p><strong>Gain</strong> is a scaling factor that is used to convert a digital number (DN) to an actual radiance value. It represents the increase in radiance corresponding to each digital count value (DN) to convert to true radiance</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="image-joining" class="level3">
+<h3 class="anchored" data-anchor-id="image-joining">1.2. Image Joining</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/DataJoining.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Feathering Overview</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>In data joining for remote sensing, Mosaicking and Feathering are more like an assembly line. First, Mosaicking stitches multiple remote sensing images together to form a <strong>continuous</strong>, <strong>seamless</strong> whole. Then Feathering creates <strong>smooth transitions</strong> in the overlapping areas</p></li>
+<li><p>Feathering works by reducing the impact of one image while increasing the impact of another at the boundaries, which may be achieved by <em>weighted averaging of pixel values</em>, <em>modifying the transparency or opacity of the alpha channel</em>, or <em>gradient blending techniques</em></p></li>
+</ul>
+</section>
+<section id="image-enhancement" class="level3">
+<h3 class="anchored" data-anchor-id="image-enhancement">1.3. Image Enhancement</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/ImageEnhancement.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Enhancement Methods Overview</figcaption>
+</figure>
+</div>
+<p>The class briefly went over 7 methods of image enhancement, each with <strong>different scenarios</strong> of application. Just like <strong>photo retouching</strong>, different parameters (contrast, sharpening, texture) focus on different parts. The best ones for me to understand are Contrast Enhancement, Band Ratioing, Edge Enhancement, and Texture, because their purpose is clear: to enhance the details in an image or to highlight certain parts of a feature (<em>Maybe because of the extensive photo retouching, it is easier to understand how the methods for highlighting image features work hahahahahahahahaha</em>). The most difficult one is PCA, which I once remembered from my undergraduate algorithms class, and I will try my best to cover its different applications in the “Application” section.</p>
 
 
 </section>
