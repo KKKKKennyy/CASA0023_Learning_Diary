@@ -1,0 +1,76 @@
+# Week 04 SAR applications & Policies {.unnumbered}
+
+## 1. Summary
+
+![Mindmap of W4 Summary](img/Week4Mindmap.png)
+
+### 1.1. Synthetic Aperture Radar (SAR)
+
+#### 1.1.1. Background info
+
+Synthetic Aperture Radar, or SAR for short, is a type of **active sensor**. Unlike passive  remote sensing, **active sensors are not affected by weather, cloud cover, or light**. The time delay and phase difference of the reflected signals are recorded by actively transmitting microwave pulses to generate surface images.
+
+In addition to being unaffected by weather and light, SAR is also highly penetrating and can penetrate vegetation (mentioned in the Wavelength section).
+
+#### 1.1.2. Polarization
+
+The concept of polarization was mentioned in Week1. However, in Week4, different types of polarization are introduced, such as horizontal polarization (HH), vertical polarization (VV), and cross-polarization (HV).
+
+![Horizontally and vertically polarized radar signal](img/SARpolarization.png)
+Source: [Dabboor and Brisco, 2018](https://www.intechopen.com/chapters/63701)
+
+Different types of features have different reflection and scattering characteristics of radar signals. For example, bare rock or ground is more sensitive to vertical polarization and scatters in the same direction as the vertical polarization, making it easier to capture this type of signal; leaves and branches in vegetation respond differently to radar waves, resulting in signals that vary in different polarization modes, and are therefore more sensitive to cross-polarization; in vertical structures, such as trees and buildings, the radar wave is first in contact with the ground, and then reflected again to the receiver, and horizontal polarization is the most sensitive for such cases.
+
+#### 1.1.3. Wavelength
+
+Different wavelengths have different usage scenarios, for example, radar systems with shorter wavelengths have higher resolution and are able to display features more clearly. However, the penetration ability for atmosphere and vegetation is poor (Ottinger and Kuenzer, 2020), and it is not easy to obtain information on the surface obscured by vegetation.
+
+![Vegetation penetration capabilities of different radar wavelengths](img/VegetationPenetration.png)
+Source: [Ottinger and Kuenzer, 2020](https://up42.com/blog/sar-data-complementary-optical)
+
+Radar systems of different wavelengths respond differently to polarised scattering, e.g. more scattering is produced by features on rough surfaces (The SAR Handbook).
+
+![Conceptual sketch of the dependence of surface roughness on the sensor wavelength λ](img/SurfaceRoughness.png)
+Source:[Ottinger and Kuenzer, 2020](https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf)
+
+### 1.2. Applications of SAR
+
+* Phase and Amplitude Data: The SAR actively transmitting wave records information by scattering from the target, which is recorded in two main ways: **phase and amplitude**. Phase is used to determine the distance from the sensor to the target, while amplitude indicates the amount of transmitted signal returned to the sensor. Amplitude and phase measurements provide information about the roughness, geometry, and humidity of the target.
+
+SAR has many applications, such as *monitoring forests and illegal logging* (Hansen et al., 2010), *drought monitoring*, *forest fire monitoring* (Morante-Carballo et al., 2022), and * *temperature and heat island effect research* in P48-P50 (Li et al., 2022) (which also will be mentioned in Week5).
+
+* Interferometric Synthetic Aperture Radar (InSAR): **SAR-based extensions** use the phase difference between two or more radar images to derive elevation information about the surface. It is mainly used in topographic surveys and surface deformation monitoring (e.g., earthquakes) Data processing for InSAR involves interferometric image generation, creation of elevation models, etc.
+
+### 1.3. Polocies
+
+|  | Policies |  
+|:-------------:|:-------------:|
+| Global |  New Urban Agenda, Sustainable Development Goals  | 
+| Metropolitan  | Policy SI 12 Flood risk management, OneNYC 2025 |  
+| Local | Cape Town Municipal Spatial Development Framework |
+
+Policies at the global level consist mainly of the **New Urban Agenda** and the **SDGs**, both of which I believe emphasise the core concept of ***sustainability***. The New Urban Agenda stresses how to build an inclusive, safe, resilient and sustainable city, as do the Sustainable Development Goals. In other words, ensuring that urban development meets human needs without negatively impacting the environment and society. But the literature doesn't seem to be able to integrate policies with human needs very well, and the question of **Page 53** is well worth thinking about.
+
+Policies, whether metropolitan or local, are considered to be detailed to a particular city. Global policies are used more to monitor and understand the changing conditions of **the earth as a whole**, while local policies are **more local and specific**, more directly affecting the lives of citizens and the sustainable development of cities. Policies in these cities are mainly concerned with *disaster monitoring*, *land use*, *environmental monitoring*, and *post-disaster reconstruction*, and remote sensing can provide data and information in this part. For example, ***remote sensing data combined with models and algorithms can be used to predict and simulate environmental phenomena***, thus helping policy makers to visualise the impact of different policies and providing them with decision support.
+
+## 2. Application
+
+
+
+## 3. Reflection
+
+This week's class is relatively theoretical, and after introduction of first week, the concepts and workings related to SAR are well understood. But InSAR is still a challenging concept and particular application of SAR. But maybe not every application needs to be very clear about every detail, **mastering the overall process as well as the overall functionality is enough** for me to use and search for related detailed applications. The Case provided by P48-P50 is also very helpful, combining the classic framework of the thesis, and showing how to use remote sensing as a data source and technology in solving practical problems in the section of Data and Methodology.In fact, **remote sensing data is not a very complicated and difficult concept**, and this case largely reduced my unfamiliarity with the concept of remote sensing.
+
+Regarding the part about policies and remote sensing, I had a question when I was listening to the lecture: *what is the relationship between these policies and remote sensing?* After doing some searching, I found that this relationship can be in two parts. The first part is "**pre-policy**", where remote sensing data can be used in conjunction with models and algorithms to **visualise different outcomes for planners before a policy is issued**, helping them to decide how the policy should be made. The other part is "**post-policy**", where policies have been issued in response to specific phenomena (e.g., heat, floods, droughts, etc.) due to the presence of those phenomena. Remote sensing can be used as a technology to help governments and organisations to better understand and respond to environmental challenges. **Supporting them at the data level to make the best use of resources**.
+
+One of the great things about this lecture is that it made me realise that **not every detail is so important**, and that it is much clearer to **have a general framework and process** in place first. So many of the policies in the second half of the class were still a little vague for me, despite being broken down into Global, Metropolitan, and Local. However, when I really studied them in detail, and read the policies in detail, I realised that I could actually understand them in a different way: *global policies provide the general framework, and urban policies are implemented in different aspects of urban management with remote sensing data in order to fulfil the vision of the global policies*.
+
+![Connection within Policies in my opinion](img/UnderstandingOfPolicies.jpg)
+
+
+
+
+
+
+
+

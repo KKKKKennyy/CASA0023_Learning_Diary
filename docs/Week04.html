@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LearningDiary - Week 03 Remote sensing data</title>
+<title>LearningDiary - Week 04 SAR applications &amp; Policies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Week04.html" rel="next">
-<link href="./Week02.html" rel="prev">
+<link href="./Week03.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Week03.html">Week 03 Remote sensing data</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Week04.html">Week 04 SAR applications &amp; Policies</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -119,13 +118,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week03.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Week03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 03 Remote sensing data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week04.html" class="sidebar-item-text sidebar-link">
+  <a href="./Week04.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 04 SAR applications &amp; Policies</span></a>
   </div>
 </li>
@@ -141,12 +140,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">1. Summary</a>
   <ul class="collapse">
-  <li><a href="#corrections" id="toc-corrections" class="nav-link" data-scroll-target="#corrections">1.1. Corrections</a></li>
-  <li><a href="#image-joining" id="toc-image-joining" class="nav-link" data-scroll-target="#image-joining">1.2. Image Joining</a></li>
-  <li><a href="#image-enhancement" id="toc-image-enhancement" class="nav-link" data-scroll-target="#image-enhancement">1.3. Image Enhancement</a></li>
+  <li><a href="#synthetic-aperture-radar-sar" id="toc-synthetic-aperture-radar-sar" class="nav-link" data-scroll-target="#synthetic-aperture-radar-sar">1.1. Synthetic Aperture Radar (SAR)</a></li>
+  <li><a href="#applications-of-sar" id="toc-applications-of-sar" class="nav-link" data-scroll-target="#applications-of-sar">1.2. Applications of SAR</a></li>
+  <li><a href="#polocies" id="toc-polocies" class="nav-link" data-scroll-target="#polocies">1.3. Polocies</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">2. Application</a></li>
-  <li><a href="#reflecion" id="toc-reflecion" class="nav-link" data-scroll-target="#reflecion">3. Reflecion</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">3. Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -155,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 03 Remote sensing data</h1>
+<h1 class="title">Week 04 SAR applications &amp; Policies</h1>
 </div>
 
 
@@ -174,126 +173,83 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="summary">1. Summary</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/Week3Mindmap.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Mindmap of W3 Summary</figcaption>
+<p><img src="img/Week4Mindmap.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mindmap of W4 Summary</figcaption>
 </figure>
 </div>
-<section id="corrections" class="level3">
-<h3 class="anchored" data-anchor-id="corrections">1.1. Corrections</h3>
-<section id="geometric" class="level4">
-<h4 class="anchored" data-anchor-id="geometric">1.1.1. Geometric</h4>
-<section id="definition" class="level5">
-<h5 class="anchored" data-anchor-id="definition">Definition</h5>
-<p>When remote sensing data are collected, <em>the sensor is not pointing directly down to the ground</em>; <em>elevation changes due to the undulations of the terrain</em>; <em>changes in the trajectory of the vehicle due to winds</em>; <em>and the relative motion of the satellite with respect to the earth</em> can all lead to image distortion. Correction for such images is <strong>geometric correction</strong>.</p>
+<section id="synthetic-aperture-radar-sar" class="level3">
+<h3 class="anchored" data-anchor-id="synthetic-aperture-radar-sar">1.1. Synthetic Aperture Radar (SAR)</h3>
+<section id="background-info" class="level4">
+<h4 class="anchored" data-anchor-id="background-info">1.1.1. Background info</h4>
+<p>Synthetic Aperture Radar, or SAR for short, is a type of <strong>active sensor</strong>. Unlike passive remote sensing, <strong>active sensors are not affected by weather, cloud cover, or light</strong>. The time delay and phase difference of the reflected signals are recorded by actively transmitting microwave pulses to generate surface images.</p>
+<p>In addition to being unaffected by weather and light, SAR is also highly penetrating and can penetrate vegetation (mentioned in the Wavelength section).</p>
 </section>
-<section id="solution" class="level5">
-<h5 class="anchored" data-anchor-id="solution">Solution</h5>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/GeometricSolution.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Workflow of Geometric Correction</figcaption>
-</figure>
-</div>
+<section id="polarization" class="level4">
+<h4 class="anchored" data-anchor-id="polarization">1.1.2. Polarization</h4>
+<p>The concept of polarization was mentioned in Week1. However, in Week4, different types of polarization are introduced, such as horizontal polarization (HH), vertical polarization (VV), and cross-polarization (HV).</p>
+<p><img src="img/SARpolarization.png" class="img-fluid" alt="Horizontally and vertically polarized radar signal"> Source: <a href="https://www.intechopen.com/chapters/63701">Dabboor and Brisco, 2018</a></p>
+<p>Different types of features have different reflection and scattering characteristics of radar signals. For example, bare rock or ground is more sensitive to vertical polarization and scatters in the same direction as the vertical polarization, making it easier to capture this type of signal; leaves and branches in vegetation respond differently to radar waves, resulting in signals that vary in different polarization modes, and are therefore more sensitive to cross-polarization; in vertical structures, such as trees and buildings, the radar wave is first in contact with the ground, and then reflected again to the receiver, and horizontal polarization is the most sensitive for such cases.</p>
+</section>
+<section id="wavelength" class="level4">
+<h4 class="anchored" data-anchor-id="wavelength">1.1.3. Wavelength</h4>
+<p>Different wavelengths have different usage scenarios, for example, radar systems with shorter wavelengths have higher resolution and are able to display features more clearly. However, the penetration ability for atmosphere and vegetation is poor (Ottinger and Kuenzer, 2020), and it is not easy to obtain information on the surface obscured by vegetation.</p>
+<p><img src="img/VegetationPenetration.png" class="img-fluid" alt="Vegetation penetration capabilities of different radar wavelengths"> Source: <a href="https://up42.com/blog/sar-data-complementary-optical">Ottinger and Kuenzer, 2020</a></p>
+<p>Radar systems of different wavelengths respond differently to polarised scattering, e.g.&nbsp;more scattering is produced by features on rough surfaces (The SAR Handbook).</p>
+<p><img src="img/SurfaceRoughness.png" class="img-fluid" alt="Conceptual sketch of the dependence of surface roughness on the sensor wavelength λ"> Source:<a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">Ottinger and Kuenzer, 2020</a></p>
+</section>
+</section>
+<section id="applications-of-sar" class="level3">
+<h3 class="anchored" data-anchor-id="applications-of-sar">1.2. Applications of SAR</h3>
 <ul>
-<li><p>In accurate matching of remote sensing images, more complex nonlinear transformation models may be chosen.</p></li>
-<li><p>Much like the GIS application of overlaying old maps into modern GIS. Geo-matching process to ensure accuracy and spatial consistency of maps.</p></li>
+<li>Phase and Amplitude Data: The SAR actively transmitting wave records information by scattering from the target, which is recorded in two main ways: <strong>phase and amplitude</strong>. Phase is used to determine the distance from the sensor to the target, while amplitude indicates the amount of transmitted signal returned to the sensor. Amplitude and phase measurements provide information about the roughness, geometry, and humidity of the target.</li>
+</ul>
+<p>SAR has many applications, such as <em>monitoring forests and illegal logging</em> (Hansen et al., 2010), <em>drought monitoring</em>, <em>forest fire monitoring</em> (Morante-Carballo et al., 2022), and * <em>temperature and heat island effect research</em> in P48-P50 (Li et al., 2022) (which also will be mentioned in Week5).</p>
+<ul>
+<li>Interferometric Synthetic Aperture Radar (InSAR): <strong>SAR-based extensions</strong> use the phase difference between two or more radar images to derive elevation information about the surface. It is mainly used in topographic surveys and surface deformation monitoring (e.g., earthquakes) Data processing for InSAR involves interferometric image generation, creation of elevation models, etc.</li>
 </ul>
 </section>
-</section>
-<section id="atmospheric" class="level4">
-<h4 class="anchored" data-anchor-id="atmospheric">1.1.2. Atmospheric</h4>
-<section id="definition-1" class="level5">
-<h5 class="anchored" data-anchor-id="definition-1">Definition</h5>
-<p><em>Atmospheric scattering and topographic attenuation</em> both cause environmental attenuation; in addition, <em>particles and gases in the atmosphere absorb and scatter</em> light, which can create haze that reduces contrast and sharpness in an image. Radiation produces an <em>“adjacency effect”</em> that causes pixels in an image to be affected by surrounding pixels, which affects sharpness. The correction for this type of image is <strong>Atmospheric correction</strong>.</p>
-<p><strong><em>Regarding the question on page P26 unnecessary</em></strong>: <em>Why is atmospheric correction not necessary for all such images</em>?</p>
-<p><strong><em>Answer</em></strong>: Actually it depends largely on the <strong>data</strong> and the <strong>purpose</strong>. If it is <em>just some simple classification task</em>, and highly accurate spectral information is not needed, then there is no need to do Atmospheric correction. Or there is <em>no way to do atmospheric correction when time and resources are limited</em>. Or maybe some <em>data have already been atmospherically corrected,</em> for example, both <strong>USGS Landsat</strong> and <strong>ESA Sentinel</strong> mention on their official websites that they use atmospheric correction to process the data.</p>
-</section>
-<section id="solution-1" class="level5">
-<h5 class="anchored" data-anchor-id="solution-1">Solution</h5>
-<p>There are 6 methods of atmospheric correction provided in the lecture, and the compiled notes are as follows. My preference is the fifth one because most of the functions or functions can be implemented directly by calling them. With the development of python, the Py6S library makes it easier to use atmospheric radiative transfer models including MODTRAN 4+ and Second Simulation of the Satellite Signal in the Solar Spectrum. The sixth is the most interesting to me, and appears to allow measurements to be made with a handheld device, and then linear relationships to be established to correct the remotely sensed data.</p>
-<p>It is worth noting, however, that when comparing data before and after calibration, it is necessary to <strong>ensure that the scales are consistent</strong> (e.g., P29).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/AtmosphericSolution.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Atmospheric Solution Types</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="topographic-orthorectification" class="level4">
-<h4 class="anchored" data-anchor-id="topographic-orthorectification">1.1.3. Topographic (Orthorectification)</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/OrthorectificationOverview.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Orthorectification / Topographic Correction Overview</figcaption>
-</figure>
-</div>
-<section id="definition-2" class="level5">
-<h5 class="anchored" data-anchor-id="definition-2">Definition</h5>
-<p>Orthorectification correction is a subset of geometric correction, where the image is distorted because <em>the sensor is not pointing directly below the ground</em>. The correction to remove the distortion in the image is <strong>Orthorectification correction</strong>.</p>
-</section>
-<section id="solution-2" class="level5">
-<h5 class="anchored" data-anchor-id="solution-2">Solution</h5>
-<p><strong>Sensor geometry information</strong> including sensor position, attitude and viewing angle is required to determine the actual position of the pixel on the ground. The terrain variations are then taken into account in conjunction with the <strong>Digital Elevation Model (DEM)</strong> to correct image distortions.</p>
-<p>In searching for the Digital Elevation Model, I found that Orthorectification correction is only one direction of its application. At its core, it still contains <strong>information on topographic relief, slope and aspect</strong>, which can be used not only for remote sensing data correction, but also for modelling water flow paths, flood risk areas and hydrological processes. Its applications are covered in the next “2. Application” section.</p>
-</section>
-</section>
-<section id="radiometric" class="level4">
-<h4 class="anchored" data-anchor-id="radiometric">1.1.4. Radiometric</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/RadiometricOverview.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Radiometric Correction Overview</figcaption>
-</figure>
-</div>
-<section id="definition-3" class="level5">
-<h5 class="anchored" data-anchor-id="definition-3">Definition</h5>
-<p><em>The radiance of image data can be inconsistent across time, location, and sensor</em>, <strong>Radiometric Calibration</strong> calibrates the response of a sensor by converting the digital number count (DN) of an image into a physically meaningful radiance or emissivity value.</p>
-</section>
-<section id="solution-3" class="level5">
-<h5 class="anchored" data-anchor-id="solution-3">Solution</h5>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/RadiometricSolution.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Workflow of Radiometric Correction</figcaption>
-</figure>
-</div>
-<ul>
-<li><p><strong>Bias</strong> is a constant that represents the zero offset of the sensor. It is used to adjust the output of the sensor to ensure that the zero drift of the sensor is taken into account in the radiance calculation.</p></li>
-<li><p><strong>Gain</strong> is a scaling factor that is used to convert a digital number (DN) to an actual radiance value. It represents the increase in radiance corresponding to each digital count value (DN) to convert to true radiance.</p></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="image-joining" class="level3">
-<h3 class="anchored" data-anchor-id="image-joining">1.2. Image Joining</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/DataJoining.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Feathering Overview</figcaption>
-</figure>
-</div>
-<ul>
-<li><p>In data joining for remote sensing, Mosaicking and Feathering are more like an assembly line. First, Mosaicking stitches multiple remote sensing images together to form a <strong>continuous</strong>, <strong>seamless</strong> whole. Then Feathering creates <strong>smooth transitions</strong> in the overlapping areas.</p></li>
-<li><p>Feathering works by reducing the impact of one image while increasing the impact of another at the boundaries, which may be achieved by <em>weighted averaging of pixel values</em>, <em>modifying the transparency or opacity of the alpha channel</em>, or <em>gradient blending techniques</em>.</p></li>
-</ul>
-</section>
-<section id="image-enhancement" class="level3">
-<h3 class="anchored" data-anchor-id="image-enhancement">1.3. Image Enhancement</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/ImageEnhancement.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Enhancement Methods Overview</figcaption>
-</figure>
-</div>
-<p>The class briefly went over 7 methods of image enhancement, each with <strong>different scenarios</strong> of application. Just like <strong>photo retouching</strong>, different parameters (contrast, sharpening, texture) focus on different parts. The best ones for me to understand are Contrast Enhancement, Band Ratioing, Edge Enhancement, and Texture, because their purpose is clear: to enhance the details in an image or to highlight certain parts of a feature (<em>Maybe because of the extensive photo retouching, it is easier to understand how the methods for highlighting image features work hahahahahahahahaha</em>). The most difficult one is PCA, which I once remembered from my undergraduate algorithms class, and I will try my best to cover its different applications in the “Application” section.</p>
+<section id="polocies" class="level3">
+<h3 class="anchored" data-anchor-id="polocies">1.3. Polocies</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Policies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Global</td>
+<td style="text-align: center;">New Urban Agenda, Sustainable Development Goals</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Metropolitan</td>
+<td style="text-align: center;">Policy SI 12 Flood risk management, OneNYC 2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Local</td>
+<td style="text-align: center;">Cape Town Municipal Spatial Development Framework</td>
+</tr>
+</tbody>
+</table>
+<p>Policies at the global level consist mainly of the <strong>New Urban Agenda</strong> and the <strong>SDGs</strong>, both of which I believe emphasise the core concept of <strong><em>sustainability</em></strong>. The New Urban Agenda stresses how to build an inclusive, safe, resilient and sustainable city, as do the Sustainable Development Goals. In other words, ensuring that urban development meets human needs without negatively impacting the environment and society. But the literature doesn’t seem to be able to integrate policies with human needs very well, and the question of <strong>Page 53</strong> is well worth thinking about.</p>
+<p>Policies, whether metropolitan or local, are considered to be detailed to a particular city. Global policies are used more to monitor and understand the changing conditions of <strong>the earth as a whole</strong>, while local policies are <strong>more local and specific</strong>, more directly affecting the lives of citizens and the sustainable development of cities. Policies in these cities are mainly concerned with <em>disaster monitoring</em>, <em>land use</em>, <em>environmental monitoring</em>, and <em>post-disaster reconstruction</em>, and remote sensing can provide data and information in this part. For example, <strong><em>remote sensing data combined with models and algorithms can be used to predict and simulate environmental phenomena</em></strong>, thus helping policy makers to visualise the impact of different policies and providing them with decision support.</p>
 </section>
 </section>
 <section id="application" class="level2">
 <h2 class="anchored" data-anchor-id="application">2. Application</h2>
 </section>
-<section id="reflecion" class="level2">
-<h2 class="anchored" data-anchor-id="reflecion">3. Reflecion</h2>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">3. Reflection</h2>
+<p>This week’s class is relatively theoretical, and after introduction of first week, the concepts and workings related to SAR are well understood. But InSAR is still a challenging concept and particular application of SAR. But maybe not every application needs to be very clear about every detail, <strong>mastering the overall process as well as the overall functionality is enough</strong> for me to use and search for related detailed applications. The Case provided by P48-P50 is also very helpful, combining the classic framework of the thesis, and showing how to use remote sensing as a data source and technology in solving practical problems in the section of Data and Methodology.In fact, <strong>remote sensing data is not a very complicated and difficult concept</strong>, and this case largely reduced my unfamiliarity with the concept of remote sensing.</p>
+<p>Regarding the part about policies and remote sensing, I had a question when I was listening to the lecture: <em>what is the relationship between these policies and remote sensing?</em> After doing some searching, I found that this relationship can be in two parts. The first part is “<strong>pre-policy</strong>”, where remote sensing data can be used in conjunction with models and algorithms to <strong>visualise different outcomes for planners before a policy is issued</strong>, helping them to decide how the policy should be made. The other part is “<strong>post-policy</strong>”, where policies have been issued in response to specific phenomena (e.g., heat, floods, droughts, etc.) due to the presence of those phenomena. Remote sensing can be used as a technology to help governments and organisations to better understand and respond to environmental challenges. <strong>Supporting them at the data level to make the best use of resources</strong>.</p>
+<p>One of the great things about this lecture is that it made me realise that <strong>not every detail is so important</strong>, and that it is much clearer to <strong>have a general framework and process</strong> in place first. So many of the policies in the second half of the class were still a little vague for me, despite being broken down into Global, Metropolitan, and Local. However, when I really studied them in detail, and read the policies in detail, I realised that I could actually understand them in a different way: <em>global policies provide the general framework, and urban policies are implemented in different aspects of urban management with remote sensing data in order to fulfil the vision of the global policies</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/UnderstandingOfPolicies.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Connection within Policies in my opinion</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -534,14 +490,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Week02.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 02 Portfolio</span>
+      <a href="./Week03.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 03 Remote sensing data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Week04.html" class="pagination-link">
-        <span class="nav-page-text">Week 04 SAR applications &amp; Policies</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
