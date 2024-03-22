@@ -1,0 +1,52 @@
+# Week 09 SAR in GEE {.unnumbered}
+
+## 1. Summary
+
+Since the content of the class is highly similar to that of Week4, I won't summarise it too much. There will be some new content including t-tests that will be brought through in conjunction with Practical in the Application section. If you're reading this and want to learn about SAR, click this [link](https://kkkkkennyy.github.io/CASA0023_Learning_Diary/Week04.html).
+
+## 2. Application
+
+The Practical this time was to assess the blast damage, and according to information provided by [NASA](https://earthobservatory.nasa.gov/images/147098/scientists-map-beirut-blast-damage), Sentinel-1 synthetic aperture radar (SAR) imagery is well suited for generating estimated damage maps. I think it also has to do with what I learnt about SAR when I studied it earlier: SAR is an active sensor that emits microwave pulses that can penetrate clouds and vegetation and is unaffected by light, so it can detect changes that visible light images cannot show. And when the terrain changes, the amplitude and phase of the radar waves change as a result, which is an important reason why SAR can be used to view changes in the ground. Although NASA does not provide the code and instructions for evaluating explosions, this Practical is able to reproduce the change monitoring algorithm. This is the result I completed with reference to Practical:
+
+```{r, echo=FALSE}
+htmltools::tags$iframe(style = "height:400px; width:100%", src = "https://ee-chan007026.projects.earthengine.app/view/saringee")
+```
+
+### 2.1 Change detection
+
+Detecting changes between images can be initially recognised by a simple phase reduction method of comparing images before and after an event, but this method may make it difficult to accurately distinguish the cause of the change. Considering the continuous changes in the urban environment, a more effective method is to compare a large number of images to confirm the consistency of the changes. In order to more accurately assess changes, in addition to using average pixel values, standard deviations are calculated to account for fluctuations in pixel values. By applying these statistics to a pixel t-test, the significance of the change can be quantitatively determined. If the t-value is greater than 2, the change is considered significant; if it is less than 2, the change is not significant, thus accurately identifying image changes caused by specific events. Formulas are:
+
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
+
+$$
+s = \sqrt{\frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2}
+$$
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+$$
+
+However, since the image contains both ascending and descending orbits, the difference in angle will bring some noise. A function called "filter_s1" is defined in Practical to filter the orbits to reduce the effect of noise. Then the two tracks are used separately and the results are merged into one image. Afterwards, the ROI (Region of Interest) is shown on the map.
+
+![Region of Interest](img/ROI.png)
+
+The visualisation parameters correspond to the statistical significance of the change in pixel values. Using the Viridis palette from purple to yellow, dark purple pixels indicate no significant change and yellow pixels indicate a significant change with 95% confidence. The brighter the yellow colour of the pixel, the more significant the change. But however **some other changes in the harbour could be misjudged**, such as ships coming in and out, cranes moving, and containers being loaded and unloaded are all recorded in the change detection algorithm. But the good thing is that Practical mentions among other things that the scale and number of changes in 2018 are much less than the images from 2020, suggesting that the algorithm is detecting the changes brought about by the explosion.
+
+### 2.2 Validation
+
+The algorithm appears to be effective. But how do we know that it correctly predicts the extent of damage and is not over- or under-estimating it? The answer is that using the building footprint data and the t-test image we just generated, we can create an estimate of the number of damaged buildings based on the model. First, we generate a thresholded image, setting pixels with values greater than 0 to 1 and others to 0. We can then use this mask to reduce the building footprint to a single value for each building that is the average of the t-test images within the footprint. If the average value is greater than 0, the building is damaged. If it is less than 0, the building is not damaged. 
+
+- Blue = no damage
+- Green = low damage
+- Yellow/Orange = medium damage
+- Red = high levels of damage
+
+![Validation](img/Validation.png)
+
+## 3. Reflection
+
+Similarly, the t-test I learnt this week was like applying random forests in the previous two weeks. The process of going from theory to practice is something I really enjoy, not only does it give me an additional perspective to refine my perception, but it also strengthens the application of my knowledge even further. Moreover, the topic of this practical is explosion assessment, which is also different from the previous land use classification. It showed me more possibilities of remote sensing data and algorithms. Maybe in the future we can also use remote sensing data to monitor traffic flow or illegal buildings in the city.
+
+Finally, in the last part of my learning diary, I would like to summarise some of the changes that this course has brought me. First of all, it's the divergent thinking, which can't be brought to a lot of content in the limited classroom time. But we can find the materials we need through self-study on the Internet, which is rich in resources. Then there's the "less is more" mindset. I wrote too much before reading week, so I'm taking a more in-depth view in the last four weeks. I hope to be able to be concise enough while still being clear about the information I want to share. Lastly, the integration of resources and the use of tools, the biggest difference between humans and machines is that humans have access to tools, GPT or search engines can help my learning to a certain extent, and I hope to use them more in the future.

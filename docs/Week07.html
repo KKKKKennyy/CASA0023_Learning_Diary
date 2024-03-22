@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>LearningDiary - Week 07 Classification I</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Week08.html" rel="next">
+<link href="./Week06.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Week07.html">Week 07 Classification I</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">LearningDiary</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 01 Introduction to remote sensing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02 Portfolio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 03 Remote sensing data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 04 SAR applications &amp; Policies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 06 Introduction to GEE</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week07.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 07 Classification I</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 08 Classification II</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 0</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">1. Summary</a>
+  <ul class="collapse">
+  <li><a href="#classification-and-regression-trees-cart" id="toc-classification-and-regression-trees-cart" class="nav-link" data-scroll-target="#classification-and-regression-trees-cart">1.1 Classification and regression trees (CART)</a></li>
+  <li><a href="#overfitting" id="toc-overfitting" class="nav-link" data-scroll-target="#overfitting">1.2 Overfitting</a></li>
+  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest">1.3 Random Forest</a></li>
+  <li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood">1.4 Maximum Likelihood</a></li>
+  <li><a href="#support-vector-machine-svm" id="toc-support-vector-machine-svm" class="nav-link" data-scroll-target="#support-vector-machine-svm">1.5 Support Vector Machine (SVM)</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">2. Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">3. Reflection</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 07 Classification I</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">1. Summary</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Week7Mindmap.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mindmap of W7 Summary</figcaption>
+</figure>
+</div>
+<section id="classification-and-regression-trees-cart" class="level3">
+<h3 class="anchored" data-anchor-id="classification-and-regression-trees-cart">1.1 Classification and regression trees (CART)</h3>
+<p><img src="img/CART.png" class="img-fluid" alt="Classification and regression trees examples"> Source:<a href="https://www.datacamp.com/tutorial/decision-trees-R">Datacamp</a></p>
+<p>Decision trees must be the first model to be proposed when referring to classification algorithms, whether in CASA0023 or CASA0006 (Data Science for Spatial Systems).CART is a predictive model that can be used for both classification and regression.</p>
+<p>The basic steps of the CART algorithm are as follows:</p>
+<ol type="1">
+<li><p>First split the dataset into if two subsets based on an evaluation criterion (regression tree: MSE; classification tree: Gini impurity). Since the topic of this chapter is classification, the main summary is the classification purpose of CART. Gini impurity in my understanding is whether the data in the split sub-dataset are similar. If the data in the sub-datasets are all similar, or all of them are of one class, then such a split is successful.</p></li>
+<li><p>Then repeat the splitting process until the stopping conditions are met (e.g., the maximum depth is reached, the evaluation criteria reaches a threshold).</p></li>
+<li><p>Finally, to avoid overfitting, the complexity of the tree needs to be reduced by pruning. Usually there is a cost complexity parameter to control. In practice, this can be done through various packages, such as the ccp_alpha parameter in scikit-learn.</p></li>
+</ol>
+<p>Below is an example of CART classification of land use in Milan using LANDSAT data: <img src="img/CART_Classification.png" class="img-fluid" alt="CART classification of land use in Milan"></p>
+</section>
+<section id="overfitting" class="level3">
+<h3 class="anchored" data-anchor-id="overfitting">1.2 Overfitting</h3>
+<p>Overfitting is a common problem in machine learning, referring to models that perform well on training data but poorly on new, unseen data. Overfitting models learn the noise and errors in the training data, as well as overly complex patterns that don’t apply to new data.</p>
+<p>In CART we can prevent overfitting by pruning, but in general we can choose to split the dataset into a training set and a test set. The test set provides a perspective on how the model performs on new data, as well as a way to determine if the model is starting to overfit the data in the training set. Additionally, my own previous use of machine learning algorithms has often included cross-validation to ensure that the model performs well on different subsets of data to assess the model’s ability to generalise. Or the risk of overfitting is reduced by some integration algorithm, such as random forests, which will be covered next.</p>
+</section>
+<section id="random-forest" class="level3">
+<h3 class="anchored" data-anchor-id="random-forest">1.3 Random Forest</h3>
+<p><img src="img/RandomForest.png" class="img-fluid" alt="Overview of Random Forest"> Source:<a href="https://gaussian37.github.io/ml-concept-RandomForest/">JINSOL KIM</a></p>
+<p>A random forest is, as its name suggests, an integrated model consisting of multiple CART. Each tree is trained on a different random subset of the dataset. In the classification task, each tree in the random forest produces a classification result, and then a voting mechanism is used to determine the final category.</p>
+<p>Since the trees in a random forest are built independently, the overall model is less prone to overfitting, especially if there are enough trees and enough depth. And compared to XGBoost’s constant iteration of single-class trees, the parallel computation of random forests can save a lot of time.</p>
+<p>Below is an example of CART classification of land use in Milan using LANDSAT data: <img src="img/RF_Classification.png" class="img-fluid" alt="Random Forest classification of land use in Milan"></p>
+<p>I’ve tried to zoom in on the classification results as much as possible, and was able to make it relatively obvious (I guess) that Random Forest gives better results than CART, with a much finer level of classification.</p>
+</section>
+<section id="maximum-likelihood" class="level3">
+<h3 class="anchored" data-anchor-id="maximum-likelihood">1.4 Maximum Likelihood</h3>
+<p>The maximum likelihood method used to be a nightmare for me, as learning this algorithm as an undergraduate required hand-calculating the mathematical formulas behind it. Even though it has reappeared in my graduate studies, I am no longer afraid of it. The important part of this algorithm is that it requires the assumption that the probability distribution of each category over each feature is known, usually we assume a Gaussian distribution is satisfied. Then, the training data is used to estimate the statistical parameters for each category, i.e., the mean and covariance matrices. Next, for each pixel to be classified, the probability that it belongs to each category is calculated based on its features. Finally, the probabilities of each category are compared and the pixel is assigned to the category with the largest a posteriori probability. But I personally think there is a very fundamental problem with this algorithm, which is that this precondition that the a priori probability is known is too idealistic. Often, this condition cannot be met, and therefore I have rarely seen this algorithm in practice.</p>
+</section>
+<section id="support-vector-machine-svm" class="level3">
+<h3 class="anchored" data-anchor-id="support-vector-machine-svm">1.5 Support Vector Machine (SVM)</h3>
+<p>The core of a support vector machine is to find an optimal hyperplane that maximises the boundary between two types of data in a binary classification task. That is, maximising the distance from the training data points to this decision plane. When dealing with non-linearly divisible data, SVMs map the data to a higher dimensional space via a kernel function, as shown below. (A Gaussian kernel function is usually chosen when dimensioning; when the data is linearly differentiable, the kernel function is usually chosen as a linear kernel function.)</p>
+<p><img src="img/SVM.png" class="img-fluid" alt="Hyperplanes in 2D and 3D feature space"> Source:<a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Rohith Gandhi</a></p>
+<p>To avoid overfitting, SVMs introduce a concept of Soft Margin, which was mentioned in class as allowing misclassification to occur. But it is not explained in depth too much, so I would like to expand some information moderately in this small piece. Soft Margin classification is achieved by introducing so-called slack variables (ξ), one for each point. Since a data point has a slack variable of 0 if it is on the correct side and its distance from the hyperplane exceeds the interval, the SVM needs to not only maximise the interval but also minimise the slack variables. So how can this be done? This can be done by adding a regularisation term to the objective function, which is usually the sum of the values of the slack variables, multiplied by a regularisation parameter C. This parameter C is a hyperparameter, specified by the user. When C is large, the model is prone to overfitting; when C is small, the model is prone to underfitting. Therefore, the value of C is important in the process of tuning the parameter.</p>
+</section>
+</section>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">2. Application</h2>
+<p>Phan, Kuch and Lehnert (2020) used Landsat 8 surface reflectance (L8sr) data and a random forest algorithm on GEE to study land cover in the Mongolian region. The random forest algorithm provided a relatively high level of accuracy, with an overall accuracy of over 84.31 per cent.</p>
+<p><img src="img/Applications_RF.png" class="img-fluid" alt="Land cover classification of the eight datasets"> Source:<a href="https://www.mdpi.com/2072-4292/12/15/2411">Phan, Kuch and Lehnert, 2020</a></p>
+<p>Shelestov et al.&nbsp;(2017) explored the efficiency of GEE for classifying multi-temporal satellite imagery for crop mapping, finding that while GEE provides good performance in terms of access and pre-processing, neural network-based approaches outperformed classifiers like random forest available in GEE.</p>
+<p><img src="img/Application_NN.png" class="img-fluid" alt="Final map obtained by classifying multi-temporal Landsat-8 imagery using a committee of MLP classifiers"> Source:<a href="https://www.frontiersin.org/articles/10.3389/feart.2017.00017/full">Shelestov et al., 2017</a></p>
+<p>When looking for applications of classification algorithms on GEE, I found that the vast majority of the research used more basic algorithms such as Random Forest or Gradient Tree Boosting. As Shelestov et al.&nbsp;suggest, neural networks are better at dealing with more complex problems, but it seems that GEE doesn’t directly provide built-in support for these types of models.However, GEE does seem to have an API option in the UI, so it may be possible to train models in external environments (deep learning frameworks such as TensorFlow, PyTorch, etc.) and then import them into GEE for use. This may be a future direction to improve the accuracy and robustness of remote sensing classification.</p>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">3. Reflection</h2>
+<p>Initially when I approached this class, I was curious about how I should classify images. Can a machine really tell what category a part of an image belongs to, just like the human eye? What I didn’t expect is that it really can. It turns out that images are also made up of pixels, and algorithms can classify them through computation or judgement. In the process of doing Practical, I found that it is really interesting to find a practical scenario for the theory I learnt before. What I learnt in theory was always that the Random Forest model is poorly interpretable, but in practice when I visualised the classification results, the results provided a lot of insights and were obvious. For me, in the future, I can consolidate the theory with practice.</p>
+<p>In addition, GEE is a relatively new platform, and I didn’t find too many tutorials during the practical debugging process. Besides referring to the official website of GEE, the content provided by Olie in CASA0025 is also very helpful. Although I didn’t take that course, thanks to Olie for making the website public. From a certain point of view, learning is also a process of resource integration, combining different resources, always find a way to debug. In the future, I can also organise more and collect resources from different parties to help me learn.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Week06.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 06 Introduction to GEE</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Week08.html" class="pagination-link">
+        <span class="nav-page-text">Week 08 Classification II</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

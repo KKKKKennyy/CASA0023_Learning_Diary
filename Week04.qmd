@@ -16,8 +16,7 @@ In addition to being unaffected by weather and light, SAR is also highly penetra
 
 The concept of polarization was mentioned in Week1. However, in Week4, different types of polarization are introduced, such as horizontal polarization (HH), vertical polarization (VV), and cross-polarization (HV).
 
-![Horizontally and vertically polarized radar signal](img/SARpolarization.png) 
-Source: [Dabboor and Brisco, 2018](https://www.intechopen.com/chapters/63701)
+![Horizontally and vertically polarized radar signal](img/SARpolarization.png) Source: [Dabboor and Brisco, 2018](https://www.intechopen.com/chapters/63701)
 
 Different types of features have different reflection and scattering characteristics of radar signals. For example, bare rock or ground is more sensitive to vertical polarization and scatters in the same direction as the vertical polarization, making it easier to capture this type of signal; leaves and branches in vegetation respond differently to radar waves, resulting in signals that vary in different polarization modes, and are therefore more sensitive to cross-polarization; in vertical structures, such as trees and buildings, the radar wave is first in contact with the ground, and then reflected again to the receiver, and horizontal polarization is the most sensitive for such cases.
 
@@ -25,13 +24,11 @@ Different types of features have different reflection and scattering characteris
 
 Different wavelengths have different usage scenarios, for example, radar systems with shorter wavelengths have higher resolution and are able to display features more clearly. However, the penetration ability for atmosphere and vegetation is poor (Ottinger and Kuenzer, 2020), and it is not easy to obtain information on the surface obscured by vegetation.
 
-![Vegetation penetration capabilities of different radar wavelengths](img/VegetationPenetration.png) 
-Source: [Ottinger and Kuenzer, 2020](https://up42.com/blog/sar-data-complementary-optical)
+![Vegetation penetration capabilities of different radar wavelengths](img/VegetationPenetration.png) Source: [Ottinger and Kuenzer, 2020](https://up42.com/blog/sar-data-complementary-optical)
 
 Radar systems of different wavelengths respond differently to polarised scattering, e.g. more scattering is produced by features on rough surfaces (The SAR Handbook).
 
-![Conceptual sketch of the dependence of surface roughness on the sensor wavelength λ](img/SurfaceRoughness.png) 
-Source:[Ottinger and Kuenzer, 2020](https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf)
+![Conceptual sketch of the dependence of surface roughness on the sensor wavelength λ](img/SurfaceRoughness.png) Source:[Ottinger and Kuenzer, 2020](https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf)
 
 ### 1.2. Applications of SAR
 
@@ -79,10 +76,7 @@ dev.off()
 
 ```
 
-![AQI of London in 2023](img/London2023AQI.png)
-Source:[AQI.IN](https://www.aqi.in/dashboard/united-kingdom/london,city-of/london) 
-![AQI of Mumbai in 2023](img/Mumbai2023AQI.png)
-Source:[AQI.IN](https://www.aqi.in/dashboard/india/maharashtra/mumbai)
+![AQI of London in 2023](img/London2023AQI.png) Source:[AQI.IN](https://www.aqi.in/dashboard/united-kingdom/london,city-of/london) ![AQI of Mumbai in 2023](img/Mumbai2023AQI.png) Source:[AQI.IN](https://www.aqi.in/dashboard/india/maharashtra/mumbai)
 
 According to The Time of India reports in [2022](https://timesofindia.indiatimes.com/blogs/voices/mumbai-climate-action-plan-2022-all-you-need-to-know/) and [2023](https://timesofindia.indiatimes.com/city/mumbai/mumbai-air-pollution-mpcb-lists-slew-of-measures-if-aqi-gets-worse/articleshow/104790950.cms?), **air pollution continues to be a serious problem**. And according to reports, PM2.5 in the homes of people living near construction sites exceeds ***300µg/m3***, which is even more than three times the official figure (***69.5µg/m3***), compared to the UN's healthy range of ***\<10µg/m3***.According to CARB's information, PM2.5 can **have adverse health effects**, including premature death, bronchitis, asthma attacks, respiratory symptoms, and debilitating lung function development in children are associated.
 
@@ -92,19 +86,15 @@ According to The Time of India reports in [2022](https://timesofindia.indiatimes
 
 To allow air pollution to become so severe is contrary to commitments (b), (c), and (d) of Article 4 of **The United Nations Framework Convention on Climate Change (UNFCCC)**; 65, 75, and 79 of **The New Urban Agenda**; "Goal 3, 11, 13 of **The Sustainable Development Goals**.
 
-![Overview of Global Policies](img/GlobalPolicies.png)
-Source:[UNFCCC](https://unfccc.int/resource/docs/convkp/conveng.pdf), [The New Urban Agenda](https://habitat3.org/the-new-urban-agenda/), [SDGs](https://sdgs.un.org/goals)
+![Overview of Global Policies](img/GlobalPolicies.png) Source:[UNFCCC](https://unfccc.int/resource/docs/convkp/conveng.pdf), [The New Urban Agenda](https://habitat3.org/the-new-urban-agenda/), [SDGs](https://sdgs.un.org/goals)
 
 Overall, Mumbai's current *unsustainable building patterns in the city*, *greenhouse gas emissions that far exceed standards*, and *particulate emissions that are harmful to people's health* are **all contrary to global policies**. Malathy Iyer's ([2023](https://timesofindia.indiatimes.com/city/mumbai/why-mumbai-is-getting-a-choking-feeling-like-delhi/articleshow/105051675.cms)) research suggests that Mumbai's air pollution stems not only from unsustainable construction modes, but also from construction-induced reductions in road surfaces, combined with Mumbai's over 120,000 car ownership. *Vehicles need to spend more time on the road*, which leads to an **increase in NOx and pollutant emissions**. In addition, NOx generates oxygen radicals in a photochemical reaction, which combine with oxygen molecules to **generate abrasive and corrosive ozone**, further harming people's health.
 
 #### 2.3.2. National and Local
 
-![Metropolitan Policy in Air Quality](img/MCAP2022AirQuality.png) 
-![Metropolitan Policy in Integrated Mobility](img/MCAP2022IntegratedMobility.png) 
-Source: [Mumbai Climate Action Plan 2022](https://ghhin.org/resources/mumbai-climate-action-plan-2022/)
+![Metropolitan Policy in Air Quality](img/MCAP2022AirQuality.png) ![Metropolitan Policy in Integrated Mobility](img/MCAP2022IntegratedMobility.png) Source: [Mumbai Climate Action Plan 2022](https://ghhin.org/resources/mumbai-climate-action-plan-2022/)
 
-![Policy in India National Action Planon Climate Change](img/Policy_in_India_National_Action_Planon_Climate_Change.png) 
-Source: [Government of India](https://moef.gov.in/moef/division/environment-divisions/climate-changecc-2/national-action-plan-on-climate-change/index.html)
+![Policy in India National Action Planon Climate Change](img/Policy_in_India_National_Action_Planon_Climate_Change.png) Source: [Government of India](https://moef.gov.in/moef/division/environment-divisions/climate-changecc-2/national-action-plan-on-climate-change/index.html)
 
 **Policies at the Metropolitan and Local levels** are more focused on practical implementation due to the contribution of total suspended particulate matter (PM) emissions from construction activities and pollution from traffic exhaust. The emphasis is on safeguarding the health of citizens through sustainable transport and air quality management. [Mumbai Climate Action Plan 2022](https://ghhin.org/resources/mumbai-climate-action-plan-2022/) states that reliance on ground-based monitoring stations limits the scope and breadth of analyses, and thus *fails to identify past patterns and future trends*. Remotely sensed data can go some way towards filling critical data gaps.
 
