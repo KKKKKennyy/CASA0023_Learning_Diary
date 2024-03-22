@@ -6,7 +6,7 @@
 
 ### 1.1. Corrections
 
-#### 1.1.1. Geometric 
+#### 1.1.1. Geometric
 
 ##### Definition
 
@@ -16,9 +16,9 @@ When remote sensing data are collected, *the sensor is not pointing directly dow
 
 ![Workflow of Geometric Correction](img/GeometricSolution.png)
 
-* In accurate matching of remote sensing images, more complex nonlinear transformation models may be chosen.
+-   In accurate matching of remote sensing images, more complex nonlinear transformation models may be chosen.
 
-* Much like the GIS application of overlaying old maps into modern GIS. Geo-matching process to ensure accuracy and spatial consistency of maps.
+-   Much like the GIS application of overlaying old maps into modern GIS. Geo-matching process to ensure accuracy and spatial consistency of maps.
 
 #### 1.1.2. Atmospheric
 
@@ -64,17 +64,17 @@ In searching for the Digital Elevation Model, I found that Orthorectification co
 
 ![Workflow of Radiometric Correction](img/RadiometricSolution.png)
 
-* **Bias** is a constant that represents the zero offset of the sensor. It is used to adjust the output of the sensor to ensure that the zero drift of the sensor is taken into account in the radiance calculation.
+-   **Bias** is a constant that represents the zero offset of the sensor. It is used to adjust the output of the sensor to ensure that the zero drift of the sensor is taken into account in the radiance calculation.
 
-* **Gain** is a scaling factor that is used to convert a digital number (DN) to an actual radiance value. It represents the increase in radiance corresponding to each digital count value (DN) to convert to true radiance.
+-   **Gain** is a scaling factor that is used to convert a digital number (DN) to an actual radiance value. It represents the increase in radiance corresponding to each digital count value (DN) to convert to true radiance.
 
 ### 1.2. Image Joining
 
 ![Feathering Overview](img/DataJoining.jpg)
 
-* In data joining for remote sensing, Mosaicking and Feathering are more like an assembly line. First, Mosaicking stitches multiple remote sensing images together to form a **continuous**, **seamless** whole. Then Feathering creates **smooth transitions** in the overlapping areas.
+-   In data joining for remote sensing, Mosaicking and Feathering are more like an assembly line. First, Mosaicking stitches multiple remote sensing images together to form a **continuous**, **seamless** whole. Then Feathering creates **smooth transitions** in the overlapping areas.
 
-* Feathering works by reducing the impact of one image while increasing the impact of another at the boundaries, which may be achieved by *weighted averaging of pixel values*, *modifying the transparency or opacity of the alpha channel*, or *gradient blending techniques*.
+-   Feathering works by reducing the impact of one image while increasing the impact of another at the boundaries, which may be achieved by *weighted averaging of pixel values*, *modifying the transparency or opacity of the alpha channel*, or *gradient blending techniques*.
 
 ### 1.3. Image Enhancement
 
@@ -84,12 +84,19 @@ The class briefly went over 7 methods of image enhancement, each with **differen
 
 ## 2. Application
 
+Principal Component Analysis (PCA) is a statistical method used to reveal important features in data by reducing the dimensionality of the data while preserving as much of the variance of the original data as possible.The basic idea behind PCA is to find the main directions of variation in the data and to re-represent the data as coordinates in those directions, which are called principal components.
+
+PCA can be used for various remote sensing applications. The main dimensionality reduction function is embodied in feature extraction. As early as 2004, Munyati has used PCA to monitor changes in the Kafue wetland in Zambia. The study ran PCA on 12-band imagery to produce colour composite images that highlighted changes in the wetland system.A study by Estornell et al. in 2013 also demonstrated the feasibility of PCA being able to extract land information. After applying PCA to LandSat imagery of the province of Valencia, the study demonstrated that the main components are still capable of detecting forested areas affected by forest fires. However, PCA also exists with certain problems, and when the FEATURES are linearly indistinguishable, often the performance of PCA is unsatisfactory.
+
+Similarly, in the field of remote sensing image fusion, Zhang et al. (2016) proposed a method called Sparse Representation and PCA (SPCA), which can effectively simulate intra- and inter-channel correlations to achieve image fusion. Nowadays, there are also methods such as kernel-PCA that first map the data points into a high-dimensional space so as to perform the division of the maximum variance.
+
+![Kernel PCA](img/KernelPCA.png)
+Source: [Enes Zvornicanin, 2024](https://www.baeldung.com/cs/kernel-principal-component-analysis)
+
 ## 3. Reflecion
 
+For the reflection part I chose to focus on enhancements. The concepts of calibration are actually all relatively clear, and very often some calibration (e.g. atmospheric correction) is done at the time of sensor collection. But PCA in image fusion really caught my eye, and I can see that I will have the opportunity to put it into practice in a future Practical. Therefore, I would like to focus more on this concept that I find useful and will use in the future.
 
+PCA is also from undergraduate exposure to postgraduate studies. For me, it was a poorly understood concept. But as I continued to learn about it, I slowly began to understand the concept better. At its core, it's like when you're taking a group photo and you can get the most people in the picture from that one angle. To get more people in the picture, the angle has to ensure that everyone is standing as sparsely as possible, i.e. the variance has to be high. This is the core of PCA, maximising information retention.
 
-
-
-
-
-
+Although PCA itself has some limitations, such as linearly indistinguishable data that can have a big impact on performance. But the good thing is that it works well in the vast majority of cases. I remember the first week of Practical with that 1.16G dataset. If I had to deal with a file of that size for every operation, it would be a challenge to my time and computing resources. But if I can use PCA to retain valid information, perhaps this will allow me to do my job of analysing the data more efficiently. Starting to look forward to READING WEEK to come back to practical.
