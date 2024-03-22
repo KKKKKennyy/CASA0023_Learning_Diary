@@ -1,5 +1,3 @@
-
-
 # Preface {.unnumbered}
 
 This is a Learning Diary of CASA0023 Remote Sensing.
@@ -8,14 +6,4 @@ This is a Learning Diary of CASA0023 Remote Sensing.
 
 ![yy's portrait](/img/IMG_5276.JPG)
 
-KKKKKenny, 
-
-## About Layout of Learning Diary
-
-You can also click bar in the left to navigate to corresponding page
-
-- Week 01
-
-- Week 02
-
-- Week 03
+Hi! I am KKKKKKenny and currently studying MSc Urban Spatial Science at ucl. Welcome to my learning diary. here you will see my exploration of the course, perhaps it won't be very clear as this is my first attempt at making this website and learning diary. Perhaps it won't be very professional either, and rather than thinking of it as an assignment, I'd really like to think of it as a true diary. Since coming to CASA, I have tried many new things, including this website you see here. I hope that the content of the website or my learning process can inspire you in some way. I also hope that this courage to try new things will continue with me as well. Thank you for reading this, so let's get closer to remote sensing and CASA0023.

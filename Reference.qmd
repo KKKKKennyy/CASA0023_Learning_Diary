@@ -1,0 +1,29 @@
+# Reference {.unnumbered}
+
+Balaniuk, R., Isupova, O. and Reece, S. (2020) 'Mining and tailings dam detection in satellite imagery using Deep Learning', Sensors, 20(23), p. 6936. doi:10.3390/s20236936. 
+
+Brihanmumbai Municipal Corporation. (2022) 'Mumbai Climate Action Plan 2022', [Online] Available at: https://ghhin.org/resources/mumbai-climate-action-plan-2022/ [Accessed 19 Feb 2024]
+
+Dabboor, M. and Brisco, B. (2019) 'Wetland Monitoring and mapping using Synthetic Aperture Radar', Wetlands Management - Assessing Risk and Sustainable Solutions [Preprint]. doi:10.5772/intechopen.80224. 
+
+Government of India. (2008) 'NATIONAL ACTION PLAN ON CLIMATE CHANGE', [Online] Available at: https://moef.gov.in/moef/division/environment-divisions/climate-changecc-2/national-action-plan-on-climate-change/index.html [Accessed 19 Feb 2024]
+
+Matarira, D. et al. (2022) 'Object-based informal settlement mapping in Google Earth engine using the integration of sentinel-1, sentinel-2, and PlanetScope Satellite Data', Land, 12(1), p. 99. doi:10.3390/land12010099. 
+
+Parente, L. et al. (2019) 'Next generation mapping: Combining deep learning, cloud computing, and Big Remote Sensing Data', Remote Sensing, 11(23), p. 2881. doi:10.3390/rs11232881. 
+
+Phan, T.N., Kuch, V. and Lehnert, L.W. (2020) 'Land cover classification using Google Earth engine and random forest classifier—the role of image composition', Remote Sensing, 12(15), p. 2411. doi:10.3390/rs12152411. 
+
+Scheibenreif, L., Mommert, M. and Borth, D. (2021) 'Estimation of Air Pollution with Remote Sensing Data: Revealing Greenhouse Gas Emissions from Space', arXiv preprint arXiv:2108.13902.
+
+Shelestov, A. et al. (2017) 'Exploring google earth engine platform for Big Data Processing: Classification of multi-temporal satellite imagery for crop mapping', Frontiers in Earth Science, 5. doi:10.3389/feart.2017.00017. 
+
+UNITED NATIONS, (2007) 'United Nations Framework Convention on Climate Change (UNFCCC)'. [Online] Available at: https://unfccc.int/resource/docs/convkp/conveng.pdf [Accessed 19 Feb 2024]
+
+United Nations, (2016) 'The New Urban Agenda', [Online] (Adopted at the United Nations Conference on Housing and Sustainable Urban Development — Habitat III in Quito, Ecuador, on 20 October 2016). Available at: https://habitat3.org/the-new-urban-agenda/ [Accessed 19 Feb 2024].
+
+Vos, K. et al. (2019) 'CoastSat: A google earth engine-enabled python toolkit to extract shorelines from publicly available satellite imagery', Environmental Modelling &amp; Software, 122, p. 104528. doi:10.1016/j.envsoft.2019.104528. 
+
+Wang, Y. et al. (2020) 'An urban water extraction method combining deep learning and Google Earth engine', IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 13, pp. 769–782. doi:10.1109/jstars.2020.2971783. 
+
+Young, N.E. et al. (2017) 'A survival guide to landsat preprocessing', Ecology, 98(4), pp. 920–932. doi:10.1002/ecy.1730. 
