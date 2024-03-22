@@ -11,8 +11,7 @@
 | Passive |   ❌   | Reflected energy from sun (electromagnetic) | Human eye, Satellite sensor |           Remote Sensing, meteorological observation, astronomy           |
 | Active  |   ✅   |     Electromagnetic that actively emit      |     Radar, X-ray, LiDAR     | ranging, velocity measurement, terrain mapping, and target identification |
 
-![Different Sensors](img/DifferentSensors.png)
-Source: [NASA](https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing#resolution)
+![Different Sensors](img/DifferentSensors.png) Source: [NASA](https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing#resolution)
 
 Passive sensors are more widely used in remote sensing of the Earth and environmental monitoring because they can provide multi-band information on a global scale.
 
@@ -34,8 +33,7 @@ Passive sensors are more widely used in remote sensing of the Earth and environm
 -   Energy will be obsorbed by the surface
 -   Energy being transmitted through the surface
 
-![Interaction with Earth's Surface](img/InteractionWithSurface.png) 
-Source:[Ghimire, 2021](https://www.researchgate.net/publication/350978231_Remote_Sensing_and_Image_Analysis_in_Environmental_Studies/figures?lo=1)
+![Interaction with Earth\'s Surface](img/InteractionWithSurface.png) Source:[Ghimire, 2021](https://www.researchgate.net/publication/350978231_Remote_Sensing_and_Image_Analysis_in_Environmental_Studies/figures?lo=1)
 
 -   Bidirectional Reflectance Distribution Function (BRDF):
 
@@ -53,15 +51,13 @@ Source:[Ghimire, 2021](https://www.researchgate.net/publication/350978231_Remote
 
 Atmospheric scattering
 
-![Interaction with Atmosphere](img/InteractionWithAtmosphere.png) 
-Source:[Bovensmann et al., 2011](https://wordpress71133.wordpress.com/the-light-energy-source-in-remote-sensing/)
+![Interaction with Atmosphere](img/InteractionWithAtmosphere.png) Source:[Bovensmann et al., 2011](https://wordpress71133.wordpress.com/the-light-energy-source-in-remote-sensing/)
 
 Q: Why is the sky blue (provided that air particles)
 
 A: Because when the sun is overhead, the shorter wavelength of blue light (as shown in the figure below) is more easily scattered, and thus the sky is observed to be blue. Whereas at sunset, the blue light is scattered away by the atmosphere and the orange-red light passes through the atmosphere into the eye, hence the sky is orange-red.
 
-![Wavelength of Different colours](img/WavelengthOfColors.png) 
-Source: [The University of Waikato Te Whare Wānanga o Waikato](https://www.sciencelearn.org.nz/resources/47-colours-of-light)
+![Wavelength of Different colours](img/WavelengthOfColors.png) Source: [The University of Waikato Te Whare Wānanga o Waikato](https://www.sciencelearn.org.nz/resources/47-colours-of-light)
 
 Similarly, seawater has the ability to absorb and scatter. What we usually observe is blue light scattered by seawater.
 
@@ -77,38 +73,46 @@ Majority of remotely sensed data is ***Raster*** which is [built from pixel](htt
 
 -   Resolution:
 
-1. Radiometric: The amount of information in each pixel. 
+1.  Radiometric: The amount of information in each pixel.
 
-- 8-bit can hold 0-255 possibilities, 11-bit can hold 0-2047 possibilities. Here it is perhaps more superficially understood that subtle colour differences can or cannot be represented. 
+-   8-bit can hold 0-255 possibilities, 11-bit can hold 0-2047 possibilities. Here it is perhaps more superficially understood that subtle colour differences can or cannot be represented.
 
-- In addition, different numbers of spectral channels correspond to different spectral ranges measured on different bands. Multiple spectral channels allow the capture of information in different bands of the surface, such as visible light, infrared, etc. For example, AVIRIS has 224 spectral channels.
+-   In addition, different numbers of spectral channels correspond to different spectral ranges measured on different bands. Multiple spectral channels allow the capture of information in different bands of the surface, such as visible light, infrared, etc. For example, AVIRIS has 224 spectral channels.
 
-2. Spatial: The size of the actual area represented by each pixel point.
+2.  Spatial: The size of the actual area represented by each pixel point.
 
-- The higher the resolution, the finer the surface features captured.
+-   The higher the resolution, the finer the surface features captured.
 
-![The difference in pixel resolution](img/SpatialResolution.png)
-Source: [NASA](https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing#resolution)
+![The difference in pixel resolution](img/SpatialResolution.png) Source: [NASA](https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing#resolution)
 
-3. Spectral：Ability to distinguish spectral detail over different bands.
+3.  Spectral：Ability to distinguish spectral detail over different bands.
 
-- Higher spectral resolution indicates that the data has more information in more bands and is able to distinguish between more landmark features and material composition.
+-   Higher spectral resolution indicates that the data has more information in more bands and is able to distinguish between more landmark features and material composition.
 
-- In data, each band is stored in a dedicated grating layer. Spectral data can be discrete or continuous.
+-   In data, each band is stored in a dedicated grating layer. Spectral data can be discrete or continuous.
 
-![Sprctral data storage](img/SpectralResoluton.png)
-Source: [NIREOS](https://www.nireos.com/hyperspectral-imaging/)
+![Sprctral data storage](img/SpectralResoluton.png) Source: [NIREOS](https://www.nireos.com/hyperspectral-imaging/)
 
-4. Temporal: Time interval for acquiring data.
+4.  Temporal: Time interval for acquiring data.
 
-- The following figure shows the distribution of time intervals versus pixel resolution for different satellites.
+-   The following figure shows the distribution of time intervals versus pixel resolution for different satellites.
 
-![Satellites with different pixel resolution and update frequency](img/Temporal.png)
-Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)
+![Satellites with different pixel resolution and update frequency](img/Temporal.png) Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)
 
 ## 2. Application
 
-To be update
+The first week was mostly about introducing concepts, so for the application part I tried to start with Raster data. As we learnt in the GIS module last year, first we have to look at the data, which is already done in SNAP. Then we have to do some pre-processing of the data. So how do you deal with raster data? I found a flowchart from Young et al. that I can refer to:
+
+![A decision workflow showing suggested use-cases for various levels of Landsat data pre-processing](img/DecisionWorkFlow.png)
+Source: [Young et al., 2017](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.1730)
+
+1. if you need specific units (e.g., model parameters, tasseled cap transformations, etc.), then use specific units for processing.
+
+2. if you are analysing spectral values in a single scene and at a single time (e.g., single scene land cover mapping, post-classification change detection), process the data in "number of digits" format. 
+
+3. if you are analysing spectral values for multiple scenes, multiple times, or both (e.g., multi-scene land cover mapping, time series analysis, preclassification change detection), the data are processed using "surface or relative" values.
+
+I think this table might help me get into processing raster data faster in the future.
 
 ## 3. Reflection
 
@@ -116,6 +120,6 @@ The first week was a relatively basic introductory class, so overall it wasn't t
 
 Although I had forgotten a bit about the physics when it came to wavelengths and frequencies, it was good to see that only some concepts were covered. The subsequent understanding and working principle are not affected.
 
-In addition, the storage and processing of remote sensing data (**_raster_**) in class was also very confusing. But the good thing is that the Drop-in session immediately following was able to talk about and solve this problem. Each pixel point has a unique spectral map (if it's a multi-band image), usually synthesised from Red, Green, and Blue. But it is also possible to choose different wavelengths for the synthesis, depending on the needs of the study. 
+In addition, the storage and processing of remote sensing data (***raster***) in class was also very confusing. But the good thing is that the Drop-in session immediately following was able to talk about and solve this problem. Each pixel point has a unique spectral map (if it's a multi-band image), usually synthesised from Red, Green, and Blue. But it is also possible to choose different wavelengths for the synthesis, depending on the needs of the study.
 
 I'm thankful to ArcGIS, ESRI, and NASA for really providing a lot of valid information in their offical documents to help me make sense of it. For example, [this link](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/raster-bands.htm) is a detailed description of the Raster data. Also thanks to ChatGPT for being able to give me some basic Q&A's.

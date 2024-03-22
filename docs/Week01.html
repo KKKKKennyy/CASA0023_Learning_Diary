@@ -120,7 +120,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week03</span></a>
+ <span class="menu-text">Week 03 Remote sensing data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 04 SAR applications &amp; Policies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 06 Introduction to GEE</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 07 Classification I</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 08 Classification II</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 09 SAR in GEE</span></a>
   </div>
 </li>
     </ul>
@@ -257,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Energy will be obsorbed by the surface</li>
 <li>Energy being transmitted through the surface</li>
 </ul>
-<p><img src="img/InteractionWithSurface.png" class="img-fluid" alt="Interaction with Earth’s Surface"> Source:<a href="https://www.researchgate.net/publication/350978231_Remote_Sensing_and_Image_Analysis_in_Environmental_Studies/figures?lo=1">Ghimire, 2021</a></p>
+<p><img src="img/InteractionWithSurface.png" class="img-fluid" alt="Interaction with Earth's Surface"> Source:<a href="https://www.researchgate.net/publication/350978231_Remote_Sensing_and_Image_Analysis_in_Environmental_Studies/figures?lo=1">Ghimire, 2021</a></p>
 <ul>
 <li><p>Bidirectional Reflectance Distribution Function (BRDF):</p></li>
 <li><p>Definition: A two-dimensional function used to represent the intensity distribution of light entering a material or surface and then exiting the light at the other end.</p></li>
@@ -319,7 +349,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="application" class="level2">
 <h2 class="anchored" data-anchor-id="application">2. Application</h2>
-<p>To be update</p>
+<p>The first week was mostly about introducing concepts, so for the application part I tried to start with Raster data. As we learnt in the GIS module last year, first we have to look at the data, which is already done in SNAP. Then we have to do some pre-processing of the data. So how do you deal with raster data? I found a flowchart from Young et al.&nbsp;that I can refer to:</p>
+<p><img src="img/DecisionWorkFlow.png" class="img-fluid" alt="A decision workflow showing suggested use-cases for various levels of Landsat data pre-processing"> Source: <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.1730">Young et al., 2017</a></p>
+<ol type="1">
+<li><p>if you need specific units (e.g., model parameters, tasseled cap transformations, etc.), then use specific units for processing.</p></li>
+<li><p>if you are analysing spectral values in a single scene and at a single time (e.g., single scene land cover mapping, post-classification change detection), process the data in “number of digits” format.</p></li>
+<li><p>if you are analysing spectral values for multiple scenes, multiple times, or both (e.g., multi-scene land cover mapping, time series analysis, preclassification change detection), the data are processed using “surface or relative” values.</p></li>
+</ol>
+<p>I think this table might help me get into processing raster data faster in the future.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">3. Reflection</h2>

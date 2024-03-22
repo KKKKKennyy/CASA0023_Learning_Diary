@@ -102,7 +102,7 @@
     "href": "Week01.html#application",
     "title": "Week 01 Introduction to remote sensing",
     "section": "2. Application",
-    "text": "2. Application\nTo be update"
+    "text": "2. Application\nThe first week was mostly about introducing concepts, so for the application part I tried to start with Raster data. As we learnt in the GIS module last year, first we have to look at the data, which is already done in SNAP. Then we have to do some pre-processing of the data. So how do you deal with raster data? I found a flowchart from Young et al. that I can refer to:\n Source: Young et al., 2017\n\nif you need specific units (e.g., model parameters, tasseled cap transformations, etc.), then use specific units for processing.\nif you are analysing spectral values in a single scene and at a single time (e.g., single scene land cover mapping, post-classification change detection), process the data in “number of digits” format.\nif you are analysing spectral values for multiple scenes, multiple times, or both (e.g., multi-scene land cover mapping, time series analysis, preclassification change detection), the data are processed using “surface or relative” values.\n\nI think this table might help me get into processing raster data faster in the future."
   },
   {
     "objectID": "Week03.html#summary",
